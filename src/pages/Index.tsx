@@ -66,7 +66,8 @@ const Index = () => {
             <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
 
             </h1>
-            <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 text-amber-600 md:text-2xl">Inspiring students through engaging Music Education.
+            <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 text-amber-600 pt-0 md:text-xl">Engaging music instruction that helps students grow, create, and build lasting musical skills
+
 
             </p>
             <p className="text-base text-foreground font-semibold mb-10 animate-fade-up delay-200 md:text-xl">Private Lessons • Homeschool Classes • After-School Clubs
@@ -107,8 +108,7 @@ const Index = () => {
                 Our programs focus on making music fun, creative, and confidence-building for kids, while still teaching real musical skills and foundations. Whether it's their first time touching a keyboard or they're ready to perform, every student finds their place here.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
-                {features.map((feature) =>
-                <div key={feature.label} className="flex items-center gap-3 p-3 rounded-2xl bg-muted">
+                {features.map((feature) => <div key={feature.label} className="flex items-center gap-3 p-3 rounded-2xl bg-muted">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-primary" />
                     </div>
