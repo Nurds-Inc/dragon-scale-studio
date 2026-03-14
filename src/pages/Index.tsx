@@ -5,6 +5,8 @@ import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucid
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import heroImage from "@/assets/hero-music.jpg";
+import dragonHero from "@/assets/dragon-music-hero.png";
+import dragonPiano from "@/assets/dragon-piano.png";
 
 const programs = [
   {
@@ -95,12 +97,8 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-secondary overflow-hidden flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🎵</div>
-                  <p className="font-display text-2xl font-bold text-secondary-foreground">Every Child Has a Song</p>
-                  <p className="text-secondary-foreground/80 mt-2">We help them find it.</p>
-                </div>
+              <div className="aspect-square rounded-3xl overflow-hidden flex items-center justify-center bg-muted/50 p-6">
+                <img src={dragonHero} alt="Watercolor music dragon with flowing musical notes" className="w-full h-full object-contain animate-float" />
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-highlight/30 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
@@ -145,21 +143,27 @@ const Index = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-secondary rounded-3xl p-10 text-secondary-foreground">
-              <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-              <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
-              <p className="text-secondary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
-              <Link to="/contact">
-                <Button variant="accent" size="lg">Get Started</Button>
-              </Link>
+            <div className="bg-secondary rounded-3xl p-10 text-secondary-foreground relative overflow-hidden">
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-20" />
+              <div className="relative">
+                <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
+                <p className="text-secondary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
+                <Link to="/contact">
+                  <Button variant="accent" size="lg">Get Started</Button>
+                </Link>
+              </div>
             </div>
-            <div className="bg-primary rounded-3xl p-10 text-primary-foreground">
-              <div className="text-4xl mb-4">🏫</div>
-              <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
-              <p className="text-primary-foreground/80 mb-6">Bring a structured, engaging music enrichment program to your campus. Easy to host, loved by students.</p>
-              <Link to="/schools">
-                <Button variant="accent" size="lg">Partner With Us</Button>
-              </Link>
+            <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-20 scale-x-[-1]" />
+              <div className="relative">
+                <div className="text-4xl mb-4">🏫</div>
+                <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
+                <p className="text-primary-foreground/80 mb-6">Bring a structured, engaging music enrichment program to your campus. Easy to host, loved by students.</p>
+                <Link to="/schools">
+                  <Button variant="accent" size="lg">Partner With Us</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

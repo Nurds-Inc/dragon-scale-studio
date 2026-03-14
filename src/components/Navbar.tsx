@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Menu, X, Music } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import dragonLogo from "@/assets/dragon-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,8 +21,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center transition-transform group-hover:scale-110">
-              <Music className="w-5 h-5 text-accent-foreground" />
+            <div className="w-10 h-10 rounded-full overflow-hidden transition-transform group-hover:scale-110">
+              <img src={dragonLogo} alt="Dragon Scale Studio logo" className="w-full h-full object-cover" />
             </div>
             <span className="font-display text-xl font-bold text-foreground">
               Dragon Scale Studio

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Music, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import dragonLogo from "@/assets/dragon-logo.png";
 
 const Footer = () => {
   return (
@@ -8,8 +9,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center">
-                <Music className="w-5 h-5 text-accent-foreground" />
+              <div className="w-10 h-10 rounded-full overflow-hidden">
+                <img src={dragonLogo} alt="Dragon Scale Studio logo" className="w-full h-full object-cover" />
               </div>
               <span className="font-display text-xl font-bold">Dragon Scale Studio</span>
             </div>
