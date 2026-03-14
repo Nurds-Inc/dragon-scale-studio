@@ -50,7 +50,7 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/30" />
+          <div className="absolute inset-0 bg-background/50" />
         </div>
         <div className="relative container mx-auto px-4 py-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
