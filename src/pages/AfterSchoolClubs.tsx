@@ -100,7 +100,7 @@ const AfterSchoolClubs = () => {
       {/* Age Groups */}
       <section className="relative py-24 bg-muted overflow-hidden">
         <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
-        <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none hidden lg:block">
+        <div className="absolute left-0 bottom-0 opacity-10 pointer-events-none hidden lg:block">
           <img src={flyerDragon} alt="" className="w-[350px] h-auto" />
         </div>
         <div className="relative container mx-auto px-4">
