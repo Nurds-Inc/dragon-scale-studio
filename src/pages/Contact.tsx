@@ -6,6 +6,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Send, CheckCircle, Mail, Phone } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import PageLayout from "@/components/PageLayout";
+import dragonScales from "@/assets/dragon-scales-pattern.png";
+import flyerDragon from "@/assets/flyer-dragon.png";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -45,10 +47,11 @@ const Contact = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="py-16 bg-secondary">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground mb-4">Get in Touch</h1>
-          <p className="text-secondary-foreground/80 text-lg max-w-2xl mx-auto">
+      <section className="relative py-16 bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        <div className="relative container mx-auto px-4 text-center">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Get in Touch</h1>
+          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
             Whether you're a family looking for lessons or a school interested in a partnership, we'd love to hear from you.
           </p>
         </div>
@@ -87,10 +90,15 @@ const Contact = () => {
                   <h3 className="font-display text-xl font-bold mb-2">👨‍👩‍👧‍👦 For Families</h3>
                   <p className="text-primary-foreground/80 text-sm">Looking for piano lessons, after-school clubs, or homeschool music programs? Fill out the form and we'll help you find the right fit.</p>
                 </div>
-                <div className="bg-fun rounded-3xl p-8 text-fun-foreground">
+                <div className="bg-primary rounded-3xl p-8 text-primary-foreground">
                   <h3 className="font-display text-xl font-bold mb-2">🏫 For Schools</h3>
-                  <p className="text-fun-foreground/80 text-sm">Interested in bringing music enrichment to your campus? Let us know and we'll send you program details and pricing.</p>
+                  <p className="text-primary-foreground/80 text-sm">Interested in bringing music enrichment to your campus? Let us know and we'll send you program details and pricing.</p>
                 </div>
+              </div>
+
+              {/* Dragon accent */}
+              <div className="mt-8 flex justify-center opacity-30">
+                <img src={flyerDragon} alt="" className="w-48 h-auto" />
               </div>
             </div>
 

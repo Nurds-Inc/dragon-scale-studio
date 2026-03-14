@@ -4,9 +4,9 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-
-import dragonHero from "@/assets/dragon-music-hero.png";
+import flyerDragon from "@/assets/flyer-dragon.png";
 import dragonPiano from "@/assets/dragon-piano.png";
+import dragonScales from "@/assets/dragon-scales-pattern.png";
 
 const programs = [
   {
@@ -22,16 +22,16 @@ const programs = [
     title: "After-School Music Clubs",
     description: "Structured enrichment programs hosted at schools. Beginner piano, music fundamentals, and group learning.",
     link: "/after-school-clubs",
-    color: "bg-accent/10",
-    iconColor: "text-accent",
+    color: "bg-fun/10",
+    iconColor: "text-fun",
   },
   {
     icon: BookOpen,
     title: "Homeschool Music Programs",
     description: "Music education designed for homeschool families. Group classes, piano, theory, and creative activities.",
     link: "/homeschool",
-    color: "bg-fun/10",
-    iconColor: "text-fun",
+    color: "bg-accent/10",
+    iconColor: "text-accent",
   },
 ];
 
@@ -47,15 +47,16 @@ const Index = () => {
     <PageLayout>
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary">
-        <div className="absolute inset-0 flex items-center justify-center opacity-15">
-          <img src={dragonHero} alt="" className="w-[800px] h-[800px] object-contain" />
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '300px', backgroundRepeat: 'repeat' }} />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block">
+          <img src={flyerDragon} alt="" className="w-[500px] h-auto" />
         </div>
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-3xl">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-background leading-tight mb-6 animate-fade-up">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up">
               Fun and Engaging Music Education for Kids
             </h1>
-            <p className="text-lg md:text-xl text-background/85 mb-10 max-w-2xl leading-relaxed animate-fade-up delay-100">
+            <p className="text-lg md:text-xl text-primary-foreground/85 mb-10 max-w-2xl leading-relaxed animate-fade-up delay-100">
               Piano lessons and after-school music clubs that build confidence, creativity, and real musical skills.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-200">
@@ -63,7 +64,7 @@ const Index = () => {
                 <Button size="xl" variant="accent">Explore Programs</Button>
               </Link>
               <Link to="/schools">
-                <Button variant="outline" size="xl" className="border-background/30 text-background hover:bg-background/10 hover:text-background">
+                <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
                   Partner With Your School
                 </Button>
               </Link>
@@ -95,11 +96,9 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            <div className="relative">
-              <div className="aspect-square rounded-3xl overflow-hidden flex items-center justify-center bg-muted/50 p-6">
-                <img src={dragonHero} alt="Watercolor music dragon with flowing musical notes" className="w-full h-full object-contain animate-float" />
-              </div>
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-highlight/30 rounded-full blur-2xl" />
+            <div className="relative flex items-center justify-center">
+              <img src={flyerDragon} alt="Wispy watercolor music dragon with flowing musical notes and staff lines" className="w-full max-w-md h-auto animate-float" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
             </div>
           </div>
@@ -107,10 +106,11 @@ const Index = () => {
       </section>
 
       {/* Programs Overview */}
-      <section className="py-24 bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 bg-muted overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        <div className="relative container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Programs</span>
+            <span className="text-primary font-bold text-sm uppercase tracking-wider">Our Programs</span>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
               Musical Journeys for Every Student
             </h2>
@@ -142,19 +142,19 @@ const Index = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-secondary rounded-3xl p-10 text-secondary-foreground relative overflow-hidden">
-              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-20" />
+            <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-15" />
               <div className="relative">
                 <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
-                <p className="text-secondary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
+                <p className="text-primary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
                 <Link to="/contact">
                   <Button variant="accent" size="lg">Get Started</Button>
                 </Link>
               </div>
             </div>
             <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
-              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-20 scale-x-[-1]" />
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-15 scale-x-[-1]" />
               <div className="relative">
                 <div className="text-4xl mb-4">🏫</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>

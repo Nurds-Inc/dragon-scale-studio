@@ -5,6 +5,8 @@ import { CheckCircle, Users, Music, BookOpen, Star } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import heroImage from "@/assets/hero-music.jpg";
 import CTASection from "@/components/CTASection";
+import dragonScales from "@/assets/dragon-scales-pattern.png";
+import flyerDragon from "@/assets/flyer-dragon.png";
 
 const clubFeatures = [
   "Beginner piano instruction",
@@ -34,23 +36,23 @@ const AfterSchoolClubs = () => {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Kids learning piano together in a music classroom" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-foreground/60" />
+          <div className="absolute inset-0 bg-primary/70" />
         </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">After-School Clubs</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-background mt-3 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">
               After-School Music Clubs Kids Look Forward To
             </h1>
-            <p className="text-background/85 text-lg leading-relaxed mb-8">
+            <p className="text-primary-foreground/85 text-lg leading-relaxed mb-8">
               Schools can partner with us to provide structured, engaging music enrichment clubs. Students learn real music skills in a fun, supportive environment.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/schools">
-                <Button size="xl">Partner With Your School</Button>
+                <Button size="xl" variant="accent">Partner With Your School</Button>
               </Link>
               <Link to="/contact">
-                <Button variant="outline" size="xl">Learn More</Button>
+                <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">Learn More</Button>
               </Link>
             </div>
           </div>
@@ -78,15 +80,15 @@ const AfterSchoolClubs = () => {
                 ))}
               </div>
             </div>
-            <div className="bg-secondary rounded-3xl p-8">
-              <h3 className="font-display text-xl font-bold text-secondary-foreground mb-6 flex items-center gap-2">
+            <div className="bg-primary rounded-3xl p-8">
+              <h3 className="font-display text-xl font-bold text-primary-foreground mb-6 flex items-center gap-2">
                 <Star className="w-5 h-5 text-accent" /> Each Student Receives
               </h3>
               <div className="space-y-4">
                 {studentReceives.map((item) => (
-                  <div key={item} className="flex items-center gap-3 bg-secondary-foreground/10 rounded-2xl p-4">
+                  <div key={item} className="flex items-center gap-3 bg-primary-foreground/10 rounded-2xl p-4">
                     <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
-                    <span className="text-secondary-foreground font-semibold">{item}</span>
+                    <span className="text-primary-foreground font-semibold">{item}</span>
                   </div>
                 ))}
               </div>
@@ -96,10 +98,14 @@ const AfterSchoolClubs = () => {
       </section>
 
       {/* Age Groups */}
-      <section className="py-24 bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 bg-muted overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none hidden lg:block">
+          <img src={flyerDragon} alt="" className="w-[350px] h-auto" />
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-fun font-bold text-sm uppercase tracking-wider">Age Groups</span>
+            <span className="text-primary font-bold text-sm uppercase tracking-wider">Age Groups</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-3 mb-6">
               Programs for Every Age
             </h2>
@@ -128,7 +134,6 @@ const AfterSchoolClubs = () => {
         primaryLink="/contact"
         secondaryLabel="Learn About School Partnerships"
         secondaryLink="/schools"
-        variant="accent"
       />
     </PageLayout>
   );
