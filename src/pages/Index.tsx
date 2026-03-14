@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-import flyerDragon from "@/assets/flyer-dragon.png";
+import dragonCropped from "@/assets/dragon-cropped.png";
 import dragonPiano from "@/assets/dragon-piano.png";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 import sheetMusicBg from "@/assets/sheet-music-bg.jpg";
@@ -52,12 +52,12 @@ const Index = () => {
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-background/30" />
         </div>
-        {/* Dragon hugging the left edge */}
-        <div className="absolute left-0 top-0 bottom-0 w-[280px] md:w-[340px] lg:w-[400px] flex items-center">
+        {/* Dragon hugging the left edge - tall and prominent */}
+        <div className="absolute left-0 top-0 bottom-0 w-[300px] md:w-[380px] lg:w-[440px] flex items-stretch">
           <img 
-            src={flyerDragon} 
-            alt="Watercolor music dragon with flowing musical notes and staff lines" 
-            className="w-full h-auto max-h-[85vh] object-contain drop-shadow-lg mix-blend-multiply" 
+            src={dragonCropped} 
+            alt="Watercolor music dragon" 
+            className="w-full h-full object-contain object-left drop-shadow-lg mix-blend-multiply" 
           />
         </div>
         {/* Content offset to the right */}
@@ -94,7 +94,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Dragon on LEFT */}
             <div className="relative flex items-center justify-center">
-              <img src={flyerDragon} alt="Wispy watercolor music dragon" className="w-full max-w-sm h-auto" />
+              <img src={dragonCropped} alt="Wispy watercolor music dragon" className="w-full max-w-sm h-auto" />
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
             </div>
