@@ -20,8 +20,8 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16 lg:h-20">
           <Link to="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center transition-transform group-hover:scale-110">
-              <Music className="w-5 h-5 text-primary-foreground" />
+            <div className="w-10 h-10 rounded-full bg-accent flex items-center justify-center transition-transform group-hover:scale-110">
+              <Music className="w-5 h-5 text-accent-foreground" />
             </div>
             <span className="font-display text-xl font-bold text-foreground">
               Dragon Scale Studio
