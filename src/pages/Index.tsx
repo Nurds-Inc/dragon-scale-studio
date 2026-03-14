@@ -59,7 +59,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-200">
               <Link to="/piano-lessons">
-                <Button size="xl">Explore Programs</Button>
+                <Button size="xl" variant="accent">Explore Programs</Button>
               </Link>
               <Link to="/schools">
                 <Button variant="outline" size="xl" className="border-background/30 text-background hover:bg-background/10 hover:text-background">
