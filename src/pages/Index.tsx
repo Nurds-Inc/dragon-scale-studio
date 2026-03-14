@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-import dragonTight from "@/assets/dragon-tight.png";
+import dragonHero from "@/assets/dragon-hero.png";
 import dragonPiano from "@/assets/dragon-piano.png";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 import sheetMusicBg from "@/assets/sheet-music-bg.jpg";
