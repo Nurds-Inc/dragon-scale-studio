@@ -6,8 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Send, CheckCircle, Mail, Phone } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import PageLayout from "@/components/PageLayout";
-import dragonScales from "@/assets/dragon-scales-pattern.png";
-import flyerDragon from "@/assets/flyer-dragon.png";
+import heroImage from "@/assets/hero-contact.jpg";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
