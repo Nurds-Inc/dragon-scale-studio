@@ -10,38 +10,38 @@ import dragonScales from "@/assets/dragon-scales-pattern.png";
 import sheetMusicBg from "@/assets/sheet-music-bg.jpg";
 
 const programs = [
-  {
-    icon: Music,
-    title: "Piano Lessons",
-    description: "Individual and small group piano instruction for kids of all levels. Fun, engaging, and confidence-building.",
-    link: "/piano-lessons",
-    color: "bg-primary/10",
-    iconColor: "text-primary",
-  },
-  {
-    icon: Users,
-    title: "After-School Music Clubs",
-    description: "Structured enrichment programs hosted at schools. Beginner piano, music fundamentals, and group learning.",
-    link: "/after-school-clubs",
-    color: "bg-fun/10",
-    iconColor: "text-fun",
-  },
-  {
-    icon: BookOpen,
-    title: "Homeschool Music Programs",
-    description: "Music education designed for homeschool families. Group classes, piano, theory, and creative activities.",
-    link: "/homeschool",
-    color: "bg-accent/10",
-    iconColor: "text-accent",
-  },
-];
+{
+  icon: Music,
+  title: "Piano Lessons",
+  description: "Individual and small group piano instruction for kids of all levels. Fun, engaging, and confidence-building.",
+  link: "/piano-lessons",
+  color: "bg-primary/10",
+  iconColor: "text-primary"
+},
+{
+  icon: Users,
+  title: "After-School Music Clubs",
+  description: "Structured enrichment programs hosted at schools. Beginner piano, music fundamentals, and group learning.",
+  link: "/after-school-clubs",
+  color: "bg-fun/10",
+  iconColor: "text-fun"
+},
+{
+  icon: BookOpen,
+  title: "Homeschool Music Programs",
+  description: "Music education designed for homeschool families. Group classes, piano, theory, and creative activities.",
+  link: "/homeschool",
+  color: "bg-accent/10",
+  iconColor: "text-accent"
+}];
+
 
 const features = [
-  { icon: Star, label: "Beginner-friendly piano learning" },
-  { icon: Heart, label: "Creativity and confidence building" },
-  { icon: Sparkles, label: "Fun group learning experiences" },
-  { icon: Music, label: "Real music fundamentals" },
-];
+{ icon: Star, label: "Beginner-friendly piano learning" },
+{ icon: Heart, label: "Creativity and confidence building" },
+{ icon: Sparkles, label: "Fun group learning experiences" },
+{ icon: Music, label: "Real music fundamentals" }];
+
 
 const Index = () => {
   return (
@@ -54,22 +54,22 @@ const Index = () => {
         </div>
         {/* Dragon hugging the left edge - scaled up to minimize whitespace */}
         <div className="absolute left-[-60px] md:left-[-40px] top-[-20px] bottom-[-20px] w-[340px] md:w-[420px] lg:w-[500px] flex items-stretch overflow-hidden">
-          <img 
-            src={flyerDragon} 
-            alt="Watercolor music dragon" 
-            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg" 
-          />
+          <img
+            src={flyerDragon}
+            alt="Watercolor music dragon"
+            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg" />
+          
         </div>
         {/* Content offset to the right */}
         <div className="relative w-full flex items-center justify-center min-h-[90vh]">
           <div className="text-center pl-[200px] md:pl-[280px] lg:pl-[320px] pr-4">
-            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-3 animate-fade-up">
-              Dragon Scale Music Studio
+            <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
+
             </h1>
-            <p className="text-lg md:text-xl text-accent mb-6 font-display font-semibold italic animate-fade-up delay-100">
+            <p className="text-lg text-accent mb-6 font-display font-semibold italic animate-fade-up delay-100 md:text-3xl">
               by Angela King
             </p>
-            <p className="text-base md:text-lg text-foreground font-semibold mb-10 animate-fade-up delay-200">
+            <p className="text-base text-foreground font-semibold mb-10 animate-fade-up delay-200 md:text-xl">
               Private Lessons • Homeschool Classes • After-School Music Clubs
             </p>
             <div className="flex flex-col items-center gap-4 animate-fade-up delay-300">
@@ -107,14 +107,14 @@ const Index = () => {
                 Our programs focus on making music fun, creative, and confidence-building for kids, while still teaching real musical skills and foundations. Whether it's their first time touching a keyboard or they're ready to perform, every student finds their place here.
               </p>
               <div className="grid sm:grid-cols-2 gap-4">
-                {features.map((feature) => (
-                  <div key={feature.label} className="flex items-center gap-3 p-3 rounded-2xl bg-muted">
+                {features.map((feature) =>
+                <div key={feature.label} className="flex items-center gap-3 p-3 rounded-2xl bg-muted">
                     <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <feature.icon className="w-5 h-5 text-primary" />
                     </div>
                     <span className="font-semibold text-foreground text-sm">{feature.label}</span>
                   </div>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -136,8 +136,8 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {programs.map((program) => (
-              <Card key={program.title} className="group border-0 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+            {programs.map((program) =>
+            <Card key={program.title} className="group border-0 shadow-soft hover:shadow-medium transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <CardContent className="p-8">
                   <div className={`w-14 h-14 rounded-2xl ${program.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
                     <program.icon className={`w-7 h-7 ${program.iconColor}`} />
@@ -149,7 +149,7 @@ const Index = () => {
                   </Link>
                 </CardContent>
               </Card>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -190,10 +190,10 @@ const Index = () => {
         primaryLabel="Contact Us"
         primaryLink="/contact"
         secondaryLabel="View Programs"
-        secondaryLink="/piano-lessons"
-      />
-    </PageLayout>
-  );
+        secondaryLink="/piano-lessons" />
+      
+    </PageLayout>);
+
 };
 
 export default Index;
