@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Users, Music, BookOpen, Star } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
+import heroImage from "@/assets/hero-music.jpg";
 import CTASection from "@/components/CTASection";
 
 const clubFeatures = [
