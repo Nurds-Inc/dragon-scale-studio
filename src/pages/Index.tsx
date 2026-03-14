@@ -59,7 +59,7 @@ const Index = () => {
               <img 
                 src={flyerDragon} 
                 alt="Watercolor music dragon with flowing musical notes and staff lines" 
-                className="w-full max-w-md lg:max-w-lg h-auto drop-shadow-lg mix-blend-multiply" 
+                className="w-full max-w-sm lg:max-w-md h-auto drop-shadow-lg mix-blend-multiply" 
               />
             </div>
             {/* Studio name + motto on the RIGHT */}
