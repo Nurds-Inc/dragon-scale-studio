@@ -52,12 +52,12 @@ const Index = () => {
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-background/30" />
         </div>
-        {/* Dragon hugging the left edge - tall and prominent */}
-        <div className="absolute left-0 top-0 bottom-0 w-[300px] md:w-[380px] lg:w-[440px] flex items-stretch">
+        {/* Dragon hugging the left edge - scaled up to minimize whitespace */}
+        <div className="absolute left-[-60px] md:left-[-40px] top-[-20px] bottom-[-20px] w-[340px] md:w-[420px] lg:w-[500px] flex items-stretch overflow-hidden">
           <img 
-            src={dragonCropped} 
+            src={dragonTight} 
             alt="Watercolor music dragon" 
-            className="w-full h-full object-contain object-left drop-shadow-lg mix-blend-multiply" 
+            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg mix-blend-multiply" 
           />
         </div>
         {/* Content offset to the right */}
