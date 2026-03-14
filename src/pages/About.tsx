@@ -1,6 +1,7 @@
 import { Heart, Star, Music, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
+import heroImage from "@/assets/hero-about.jpg";
 import flyerDragon from "@/assets/flyer-dragon.png";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 
