@@ -74,14 +74,14 @@ const AfterSchoolClubs = () => {
               </div>
             </div>
             <div className="bg-secondary rounded-3xl p-8">
-              <h3 className="font-display text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+              <h3 className="font-display text-xl font-bold text-secondary-foreground mb-6 flex items-center gap-2">
                 <Star className="w-5 h-5 text-accent" /> Each Student Receives
               </h3>
               <div className="space-y-4">
                 {studentReceives.map((item) => (
-                  <div key={item} className="flex items-center gap-3 bg-card rounded-2xl p-4">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-foreground font-semibold">{item}</span>
+                  <div key={item} className="flex items-center gap-3 bg-secondary-foreground/10 rounded-2xl p-4">
+                    <CheckCircle className="w-5 h-5 text-accent flex-shrink-0" />
+                    <span className="text-secondary-foreground font-semibold">{item}</span>
                   </div>
                 ))}
               </div>

@@ -13,12 +13,13 @@ interface CTASectionProps {
 
 const CTASection = ({ title, description, primaryLabel, primaryLink, secondaryLabel, secondaryLink, variant = "primary" }: CTASectionProps) => {
   const bgClass = variant === "accent" ? "bg-accent" : variant === "fun" ? "bg-fun" : "bg-secondary";
+  const textClass = variant === "accent" ? "text-accent-foreground" : variant === "fun" ? "text-fun-foreground" : "text-secondary-foreground";
 
   return (
     <section className={`${bgClass} py-20`}>
       <div className="container mx-auto px-4 text-center">
-        <h2 className="font-display text-3xl md:text-4xl font-bold text-secondary-foreground mb-4">{title}</h2>
-        <p className="text-secondary-foreground/80 text-lg max-w-2xl mx-auto mb-8">{description}</p>
+        <h2 className={`font-display text-3xl md:text-4xl font-bold ${textClass} mb-4`}>{title}</h2>
+        <p className={`${textClass}/80 text-lg max-w-2xl mx-auto mb-8`}>{description}</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to={primaryLink}>
             <Button variant="accent" size="xl">{primaryLabel}</Button>
