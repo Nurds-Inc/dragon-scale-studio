@@ -20,11 +20,11 @@ const PianoLessons = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-bold text-sm uppercase tracking-wider">Piano Lessons</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+            <span className="text-accent font-bold text-sm uppercase tracking-wider">Piano Lessons</span>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground mt-3 mb-6">
               Beginner Piano Lessons That Kids Actually Love
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-secondary-foreground/80 text-lg leading-relaxed mb-8">
               Our piano lessons are designed to be engaging and approachable for young students. We focus on building real skills while keeping the fun front and center.
             </p>
             <Link to="/contact">

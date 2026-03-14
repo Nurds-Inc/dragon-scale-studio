@@ -64,23 +64,23 @@ const Schools = () => {
               </div>
             </div>
             <div className="bg-secondary rounded-3xl p-10">
-              <h3 className="font-display text-2xl font-bold text-foreground mb-6">Program Structure</h3>
+              <h3 className="font-display text-2xl font-bold text-secondary-foreground mb-6">Program Structure</h3>
               <div className="space-y-4">
-                <div className="bg-card rounded-2xl p-4">
-                  <p className="font-bold text-foreground">📅 6-Week Sessions</p>
-                  <p className="text-muted-foreground text-sm">Structured programs with clear start and end dates.</p>
+                <div className="bg-secondary-foreground/10 rounded-2xl p-4">
+                  <p className="font-bold text-secondary-foreground">📅 6-Week Sessions</p>
+                  <p className="text-secondary-foreground/70 text-sm">Structured programs with clear start and end dates.</p>
                 </div>
-                <div className="bg-card rounded-2xl p-4">
-                  <p className="font-bold text-foreground">👥 Multiple Age Groups</p>
-                  <p className="text-muted-foreground text-sm">K–2, 3–5, and Middle School options available.</p>
+                <div className="bg-secondary-foreground/10 rounded-2xl p-4">
+                  <p className="font-bold text-secondary-foreground">👥 Multiple Age Groups</p>
+                  <p className="text-secondary-foreground/70 text-sm">K–2, 3–5, and Middle School options available.</p>
                 </div>
-                <div className="bg-card rounded-2xl p-4">
-                  <p className="font-bold text-foreground">🎹 Hands-On Learning</p>
-                  <p className="text-muted-foreground text-sm">Students engage with instruments and activities every session.</p>
+                <div className="bg-secondary-foreground/10 rounded-2xl p-4">
+                  <p className="font-bold text-secondary-foreground">🎹 Hands-On Learning</p>
+                  <p className="text-secondary-foreground/70 text-sm">Students engage with instruments and activities every session.</p>
                 </div>
-                <div className="bg-card rounded-2xl p-4">
-                  <p className="font-bold text-foreground">🎤 Optional Performances</p>
-                  <p className="text-muted-foreground text-sm">End-of-session showcases for parents and school community.</p>
+                <div className="bg-secondary-foreground/10 rounded-2xl p-4">
+                  <p className="font-bold text-secondary-foreground">🎤 Optional Performances</p>
+                  <p className="text-secondary-foreground/70 text-sm">End-of-session showcases for parents and school community.</p>
                 </div>
               </div>
             </div>

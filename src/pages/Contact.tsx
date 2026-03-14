@@ -47,8 +47,8 @@ const Contact = () => {
       {/* Hero */}
       <section className="py-16 bg-secondary">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">Get in Touch</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground mb-4">Get in Touch</h1>
+          <p className="text-secondary-foreground/80 text-lg max-w-2xl mx-auto">
             Whether you're a family looking for lessons or a school interested in a partnership, we'd love to hear from you.
           </p>
         </div>

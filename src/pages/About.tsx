@@ -16,11 +16,11 @@ const About = () => {
       <section className="py-20 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="text-primary font-bold text-sm uppercase tracking-wider">About Us</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+            <span className="text-accent font-bold text-sm uppercase tracking-wider">About Us</span>
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground mt-3 mb-6">
               Making Music Education Accessible and Fun
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed">
+            <p className="text-secondary-foreground/80 text-lg leading-relaxed">
               Our mission is to make music education accessible, engaging, and confidence-building for every kid. We believe every child deserves the chance to discover their musical voice.
             </p>
           </div>
