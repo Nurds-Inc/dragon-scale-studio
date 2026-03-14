@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-import heroImage from "@/assets/hero-music.jpg";
+
 import dragonHero from "@/assets/dragon-music-hero.png";
 import dragonPiano from "@/assets/dragon-piano.png";
 
