@@ -64,7 +64,7 @@ const Index = () => {
         <div className="relative w-full flex items-center justify-center min-h-[90vh]">
           <div className="text-center pl-[200px] md:pl-[280px] lg:pl-[320px] pr-4">
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-3 animate-fade-up">
-              Dragon Scale Studio
+              Dragon Scale Music Studio
             </h1>
             <p className="text-lg md:text-xl text-accent mb-6 font-display font-semibold italic animate-fade-up delay-100">
               by Angela King
