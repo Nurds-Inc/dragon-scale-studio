@@ -46,8 +46,11 @@ const Contact = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-16 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Musical envelope with notes" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
         <div className="relative container mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Get in Touch</h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">

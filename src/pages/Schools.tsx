@@ -27,8 +27,11 @@ const Schools = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-20 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="School building with music" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">For Schools & Administrators</span>
