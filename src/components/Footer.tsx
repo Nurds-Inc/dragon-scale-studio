@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-background/10 mt-12 pt-8 text-center text-sm text-background/40">
-          <p>© {new Date().getFullYear()} Harmony Labs. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dragon Scale Music Studio by Angela King. All rights reserved.</p>
         </div>
       </div>
     </footer>
