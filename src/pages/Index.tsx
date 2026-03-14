@@ -143,21 +143,27 @@ const Index = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-secondary rounded-3xl p-10 text-secondary-foreground">
-              <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-              <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
-              <p className="text-secondary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
-              <Link to="/contact">
-                <Button variant="accent" size="lg">Get Started</Button>
-              </Link>
+            <div className="bg-secondary rounded-3xl p-10 text-secondary-foreground relative overflow-hidden">
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-20" />
+              <div className="relative">
+                <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
+                <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
+                <p className="text-secondary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
+                <Link to="/contact">
+                  <Button variant="accent" size="lg">Get Started</Button>
+                </Link>
+              </div>
             </div>
-            <div className="bg-primary rounded-3xl p-10 text-primary-foreground">
-              <div className="text-4xl mb-4">🏫</div>
-              <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
-              <p className="text-primary-foreground/80 mb-6">Bring a structured, engaging music enrichment program to your campus. Easy to host, loved by students.</p>
-              <Link to="/schools">
-                <Button variant="accent" size="lg">Partner With Us</Button>
-              </Link>
+            <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-20 scale-x-[-1]" />
+              <div className="relative">
+                <div className="text-4xl mb-4">🏫</div>
+                <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
+                <p className="text-primary-foreground/80 mb-6">Bring a structured, engaging music enrichment program to your campus. Easy to host, loved by students.</p>
+                <Link to="/schools">
+                  <Button variant="accent" size="lg">Partner With Us</Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
