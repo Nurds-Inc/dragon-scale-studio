@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { Music, Mail, Phone } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import dragonLogo from "@/assets/dragon-logo.png";
 
 const Footer = () => {
   return (
