@@ -1,6 +1,8 @@
 import { Heart, Star, Music, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
+import flyerDragon from "@/assets/flyer-dragon.png";
+import dragonScales from "@/assets/dragon-scales-pattern.png";
 
 const values = [
   { icon: Heart, title: "Love of Music", description: "We inspire a genuine love for music that lasts a lifetime. Every lesson is designed to spark joy and curiosity." },
@@ -13,14 +15,15 @@ const About = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="py-20 bg-secondary">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 bg-primary overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">About Us</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-secondary-foreground mt-3 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">
               Making Music Education Accessible and Fun
             </h1>
-            <p className="text-secondary-foreground/80 text-lg leading-relaxed">
+            <p className="text-primary-foreground/80 text-lg leading-relaxed">
               Our mission is to make music education accessible, engaging, and confidence-building for every kid. We believe every child deserves the chance to discover their musical voice.
             </p>
           </div>
@@ -43,19 +46,19 @@ const About = () => {
                 Whether we're teaching in our studio, running an after-school club at a local school, or working with homeschool families, our approach is always the same: meet kids where they are, make it fun, and help them grow.
               </p>
             </div>
-            <div className="bg-primary/5 rounded-3xl p-10 text-center">
-              <div className="text-7xl mb-6">🎵</div>
-              <blockquote className="font-display text-2xl font-bold text-foreground italic leading-relaxed">
-                "Every child has music inside them. We just help them let it out."
-              </blockquote>
+            <div className="relative flex items-center justify-center">
+              <img src={flyerDragon} alt="Wispy watercolor music dragon" className="w-full max-w-sm h-auto" />
+              <div className="absolute -top-4 -right-4 w-20 h-20 bg-accent/15 rounded-full blur-2xl" />
+              <div className="absolute -bottom-6 -left-6 w-28 h-28 bg-primary/10 rounded-full blur-3xl" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-muted">
-        <div className="container mx-auto px-4">
+      <section className="relative py-24 bg-muted overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        <div className="relative container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mb-6">What We Believe</h2>
             <p className="text-muted-foreground text-lg">Our programs are built on these core values.</p>
