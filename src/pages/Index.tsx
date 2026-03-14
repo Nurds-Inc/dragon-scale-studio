@@ -7,6 +7,7 @@ import CTASection from "@/components/CTASection";
 import flyerDragon from "@/assets/flyer-dragon.png";
 import dragonPiano from "@/assets/dragon-piano.png";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
+import sheetMusicBg from "@/assets/sheet-music-bg.jpg";
 
 const programs = [
   {
@@ -45,29 +46,43 @@ const features = [
 const Index = () => {
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '300px', backgroundRepeat: 'repeat' }} />
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-20 pointer-events-none hidden lg:block">
-          <img src={flyerDragon} alt="" className="w-[500px] h-auto" />
+      {/* Hero Section - Sheet Music + Dragon */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/30" />
         </div>
         <div className="relative container mx-auto px-4 py-20">
-          <div className="max-w-3xl">
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-up">
-              Fun and Engaging Music Education for Kids
-            </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/85 mb-10 max-w-2xl leading-relaxed animate-fade-up delay-100">
-              Piano lessons and after-school music clubs that build confidence, creativity, and real musical skills.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up delay-200">
-              <Link to="/piano-lessons">
-                <Button size="xl" variant="accent">Explore Programs</Button>
-              </Link>
-              <Link to="/schools">
-                <Button variant="outline" size="xl" className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground">
-                  Partner With Your School
-                </Button>
-              </Link>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Dragon on the LEFT (it faces right) */}
+            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+              <img 
+                src={flyerDragon} 
+                alt="Watercolor music dragon with flowing musical notes and staff lines" 
+                className="w-full max-w-sm lg:max-w-md h-auto animate-float drop-shadow-lg" 
+              />
+            </div>
+            {/* Studio name + motto on the RIGHT */}
+            <div className="text-center lg:text-right order-1 lg:order-2">
+              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-4 animate-fade-up">
+                Dragon Scale<br />Music Studio
+              </h1>
+              <p className="text-lg md:text-xl text-primary/80 mb-3 font-display font-semibold italic animate-fade-up delay-100">
+                Beginner-Friendly · Supportive · Confidence-Building
+              </p>
+              <p className="text-base md:text-lg text-foreground/70 mb-10 max-w-lg ml-auto leading-relaxed animate-fade-up delay-200">
+                Fun and engaging music education for kids. Piano lessons and after-school music clubs that build confidence, creativity, and real musical skills.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end animate-fade-up delay-300">
+                <Link to="/piano-lessons">
+                  <Button size="xl">Explore Programs</Button>
+                </Link>
+                <Link to="/schools">
+                  <Button variant="outline" size="xl">
+                    Partner With Your School
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -77,6 +92,12 @@ const Index = () => {
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Dragon on LEFT */}
+            <div className="relative flex items-center justify-center">
+              <img src={flyerDragon} alt="Wispy watercolor music dragon" className="w-full max-w-sm h-auto" />
+              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
+            </div>
             <div>
               <span className="text-primary font-bold text-sm uppercase tracking-wider">About Our Program</span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
@@ -96,18 +117,13 @@ const Index = () => {
                 ))}
               </div>
             </div>
-            <div className="relative flex items-center justify-center">
-              <img src={flyerDragon} alt="Wispy watercolor music dragon with flowing musical notes and staff lines" className="w-full max-w-md h-auto animate-float" />
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-            </div>
           </div>
         </div>
       </section>
 
       {/* Programs Overview */}
       <section className="relative py-24 bg-muted overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
         <div className="relative container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Our Programs</span>
@@ -143,7 +159,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
-              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-15" />
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -left-8 w-40 h-40 object-contain opacity-15" />
               <div className="relative">
                 <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
@@ -154,7 +170,7 @@ const Index = () => {
               </div>
             </div>
             <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
-              <img src={dragonPiano} alt="" className="absolute -bottom-8 -right-8 w-40 h-40 object-contain opacity-15 scale-x-[-1]" />
+              <img src={dragonPiano} alt="" className="absolute -bottom-8 -left-8 w-40 h-40 object-contain opacity-15 scale-x-[-1]" />
               <div className="relative">
                 <div className="text-4xl mb-4">🏫</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
