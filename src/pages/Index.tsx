@@ -94,7 +94,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Dragon on LEFT */}
             <div className="relative flex items-center justify-center">
-              <img src={dragonHero} alt="Wispy watercolor music dragon" className="w-full max-w-sm h-auto mix-blend-multiply" />
+              <img src={flyerDragon} alt="Wispy watercolor music dragon" className="w-full max-w-sm h-auto" />
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
             </div>
