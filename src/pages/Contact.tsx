@@ -98,10 +98,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Dragon accent */}
-              <div className="mt-8 flex justify-center opacity-30">
-                <img src={flyerDragon} alt="" className="w-48 h-auto" />
-              </div>
             </div>
 
             {/* Form */}
