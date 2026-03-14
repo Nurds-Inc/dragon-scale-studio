@@ -50,39 +50,39 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/50" />
+          <div className="absolute inset-0 bg-background/30" />
         </div>
-        <div className="relative container mx-auto px-4 py-20">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Dragon on the LEFT (it faces right) */}
-            <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-              <img 
-                src={flyerDragon} 
-                alt="Watercolor music dragon with flowing musical notes and staff lines" 
-                className="w-full max-w-sm lg:max-w-md h-auto drop-shadow-lg mix-blend-multiply" 
-              />
-            </div>
-            {/* Studio name + motto on the RIGHT */}
-            <div className="text-center lg:text-right order-1 lg:order-2">
-              <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-tight mb-4 animate-fade-up">
-                Dragon Scale<br />Music Studio
-              </h1>
-              <p className="text-lg md:text-xl text-primary/80 mb-3 font-display font-semibold italic animate-fade-up delay-100">
-                Beginner-Friendly · Supportive · Confidence-Building
-              </p>
-              <p className="text-base md:text-lg text-foreground/70 mb-10 max-w-lg ml-auto leading-relaxed animate-fade-up delay-200">
-                Fun and engaging music education for kids. Piano lessons and after-school music clubs that build confidence, creativity, and real musical skills.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-end animate-fade-up delay-300">
-                <Link to="/piano-lessons">
-                  <Button size="xl">Explore Programs</Button>
-                </Link>
-                <Link to="/schools">
-                  <Button variant="outline" size="xl">
-                    Partner With Your School
-                  </Button>
-                </Link>
-              </div>
+        {/* Dragon hugging the left edge */}
+        <div className="absolute left-0 top-0 bottom-0 w-[280px] md:w-[340px] lg:w-[400px] flex items-center">
+          <img 
+            src={flyerDragon} 
+            alt="Watercolor music dragon with flowing musical notes and staff lines" 
+            className="w-full h-auto max-h-[85vh] object-contain drop-shadow-lg mix-blend-multiply" 
+          />
+        </div>
+        {/* Content offset to the right */}
+        <div className="relative w-full flex items-center justify-center min-h-[90vh]">
+          <div className="text-center pl-[200px] md:pl-[280px] lg:pl-[320px] pr-4">
+            <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-primary leading-tight mb-3 animate-fade-up">
+              Dragon Scale Studio
+            </h1>
+            <p className="text-lg md:text-xl text-accent mb-6 font-display font-semibold italic animate-fade-up delay-100">
+              by Angela King
+            </p>
+            <p className="text-base md:text-lg text-foreground font-semibold mb-10 animate-fade-up delay-200">
+              Private Lessons • Homeschool Classes • After-School Music Clubs
+            </p>
+            <div className="flex flex-col items-center gap-4 animate-fade-up delay-300">
+              <Link to="/piano-lessons">
+                <Button size="xl" variant="accent" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
+                  Book a Lesson
+                </Button>
+              </Link>
+              <Link to="/schools">
+                <Button size="xl" variant="accent" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
+                  Bring a Club to Your School
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
