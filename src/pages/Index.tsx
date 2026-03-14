@@ -97,12 +97,8 @@ const Index = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl bg-secondary overflow-hidden flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="text-8xl mb-4">🎵</div>
-                  <p className="font-display text-2xl font-bold text-secondary-foreground">Every Child Has a Song</p>
-                  <p className="text-secondary-foreground/80 mt-2">We help them find it.</p>
-                </div>
+              <div className="aspect-square rounded-3xl overflow-hidden flex items-center justify-center bg-muted/50 p-6">
+                <img src={dragonHero} alt="Watercolor music dragon with flowing musical notes" className="w-full h-full object-contain animate-float" />
               </div>
               <div className="absolute -top-4 -right-4 w-24 h-24 bg-highlight/30 rounded-full blur-2xl" />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
