@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-import heroImage from "@/assets/hero-music.jpg";
+
 import dragonHero from "@/assets/dragon-music-hero.png";
 import dragonPiano from "@/assets/dragon-piano.png";
 
@@ -46,10 +46,9 @@ const Index = () => {
   return (
     <PageLayout>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImage} alt="Kids learning piano together in a colorful music classroom" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-foreground/60" />
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-primary">
+        <div className="absolute inset-0 flex items-center justify-center opacity-15">
+          <img src={dragonHero} alt="" className="w-[800px] h-[800px] object-contain" />
         </div>
         <div className="relative container mx-auto px-4 py-20">
           <div className="max-w-3xl">
