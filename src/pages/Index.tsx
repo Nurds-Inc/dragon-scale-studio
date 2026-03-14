@@ -55,9 +55,9 @@ const Index = () => {
         {/* Dragon hugging the left edge - scaled up to minimize whitespace */}
         <div className="absolute left-[-60px] md:left-[-40px] top-[-20px] bottom-[-20px] w-[340px] md:w-[420px] lg:w-[500px] flex items-stretch overflow-hidden">
           <img 
-            src={dragonHero} 
+            src={flyerDragon} 
             alt="Watercolor music dragon" 
-            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg mix-blend-multiply" 
+            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg" 
           />
         </div>
         {/* Content offset to the right */}
