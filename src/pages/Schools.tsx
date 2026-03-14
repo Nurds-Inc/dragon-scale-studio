@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, Shield, Users, BookOpen, Star, Award } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-import flyerDragon from "@/assets/flyer-dragon.png";
+import heroImage from "@/assets/hero-schools.jpg";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 
 const programIncludes = [
