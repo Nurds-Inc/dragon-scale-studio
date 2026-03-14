@@ -57,7 +57,7 @@ const Index = () => {
           <img 
             src={dragonTight} 
             alt="Watercolor music dragon" 
-            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg mix-blend-multiply" 
+            className="w-full h-full object-contain object-center scale-125 drop-shadow-lg" 
           />
         </div>
         {/* Content offset to the right */}
