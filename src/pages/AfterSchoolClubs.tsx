@@ -31,8 +31,12 @@ const AfterSchoolClubs = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="py-20 bg-accent/10">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Kids learning piano together in a music classroom" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/60" />
+        </div>
+        <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">After-School Clubs</span>
             <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
