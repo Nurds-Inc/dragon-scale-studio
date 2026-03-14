@@ -39,10 +39,10 @@ const AfterSchoolClubs = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">After-School Clubs</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-background mt-3 mb-6">
               After-School Music Clubs Kids Look Forward To
             </h1>
-            <p className="text-muted-foreground text-lg leading-relaxed mb-8">
+            <p className="text-background/85 text-lg leading-relaxed mb-8">
               Schools can partner with us to provide structured, engaging music enrichment clubs. Students learn real music skills in a fun, supportive environment.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
