@@ -24,8 +24,8 @@ const PianoLessons = () => {
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">Piano Lessons</span>
-            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">Beginner Piano Lessons 
-That Kids Actually Love
+            <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-6">Beginner Piano Lessons
+ Kids Actually Love
 
 </h1>
             <p className="text-primary-foreground/80 text-lg leading-relaxed mb-8">
