@@ -66,7 +66,7 @@ const Index = () => {
             <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
 
             </h1>
-            <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 text-amber-600 pt-0 md:text-3xl">Engaging music instruction that helps students grow, create, and build lasting musical skills
+            <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 pt-0 md:text-3xl text-fun">Engaging music instruction that helps students grow, create, and build lasting musical skills
 
 
             </p>
@@ -76,7 +76,7 @@ const Index = () => {
             <div className="flex flex-col items-center gap-4 animate-fade-up delay-300">
               <Link to="/piano-lessons">
                 <Button size="xl" variant="highlight" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
-                  Start Lessons
+                  Book a Lesson
                 </Button>
               </Link>
               <Link to="/schools">
