@@ -21,9 +21,6 @@ const Homeschool = () => {
       {/* Hero */}
       <section className="relative py-20 bg-primary overflow-hidden">
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
-          <img src={flyerDragon} alt="" className="w-[280px] h-auto" />
-        </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">Homeschool Programs</span>
