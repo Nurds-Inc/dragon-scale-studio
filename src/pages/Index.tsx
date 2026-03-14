@@ -159,7 +159,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
-              <img src={dragonPiano} alt="" className="absolute bottom-4 right-4 w-28 h-28 object-contain opacity-25" />
+              <img src={dragonPiano} alt="" className="absolute bottom-4 right-4 w-28 h-28 object-contain opacity-50" />
               <div className="relative">
                 <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
@@ -170,7 +170,7 @@ const Index = () => {
               </div>
             </div>
             <div className="bg-primary rounded-3xl p-10 text-primary-foreground relative overflow-hidden">
-              <img src={dragonPiano} alt="" className="absolute bottom-4 right-4 w-28 h-28 object-contain opacity-25 scale-x-[-1]" />
+              <img src={dragonPiano} alt="" className="absolute bottom-4 right-4 w-28 h-28 object-contain opacity-50" />
               <div className="relative">
                 <div className="text-4xl mb-4">🏫</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
