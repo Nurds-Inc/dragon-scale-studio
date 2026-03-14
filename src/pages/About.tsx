@@ -1,6 +1,7 @@
 import { Heart, Star, Music, Sparkles } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
+import heroImage from "@/assets/hero-about.jpg";
 import flyerDragon from "@/assets/flyer-dragon.png";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 
@@ -15,8 +16,11 @@ const About = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-20 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Music studio with grand piano" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-accent font-bold text-sm uppercase tracking-wider">About Us</span>

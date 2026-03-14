@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { CheckCircle, BookOpen, Users, Music, Lightbulb } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
-import flyerDragon from "@/assets/flyer-dragon.png";
+import heroImage from "@/assets/hero-homeschool.jpg";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 
 const offerings = [
@@ -19,10 +19,10 @@ const Homeschool = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-20 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
-        <div className="absolute left-8 top-1/2 -translate-y-1/2 opacity-15 pointer-events-none hidden lg:block">
-          <img src={flyerDragon} alt="" className="w-[280px] h-auto" />
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Child learning piano at home" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/70" />
         </div>
         <div className="relative container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center">

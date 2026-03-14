@@ -6,8 +6,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Send, CheckCircle, Mail, Phone } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
 import PageLayout from "@/components/PageLayout";
-import dragonScales from "@/assets/dragon-scales-pattern.png";
-import flyerDragon from "@/assets/flyer-dragon.png";
+import heroImage from "@/assets/hero-contact.jpg";
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -47,8 +46,11 @@ const Contact = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-16 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+      <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="Musical envelope with notes" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/70" />
+        </div>
         <div className="relative container mx-auto px-4 text-center">
           <h1 className="font-display text-4xl md:text-5xl font-bold text-primary-foreground mb-4">Get in Touch</h1>
           <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
@@ -96,10 +98,6 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Dragon accent */}
-              <div className="mt-8 flex justify-center opacity-30">
-                <img src={flyerDragon} alt="" className="w-48 h-auto" />
-              </div>
             </div>
 
             {/* Form */}
