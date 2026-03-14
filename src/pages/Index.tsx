@@ -74,7 +74,7 @@ const Index = () => {
             </p>
             <div className="flex flex-col items-center gap-4 animate-fade-up delay-300">
               <Link to="/piano-lessons">
-                <Button size="xl" variant="accent" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
+                <Button size="xl" variant="highlight" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
                   Book a Lesson
                 </Button>
               </Link>
