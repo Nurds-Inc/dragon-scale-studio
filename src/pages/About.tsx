@@ -37,7 +37,7 @@ const About = () => {
                 We started with a simple belief: music education should be joyful, not intimidating. Too many kids never get the chance to explore music because programs feel rigid, expensive, or unwelcoming.
               </p>
               <p className="text-muted-foreground text-lg mb-6 leading-relaxed">
-                That's why we created Harmony Labs — a place where kids can learn piano, explore music fundamentals, and build real skills in an environment that feels fun, creative, and encouraging.
+                That's why we created Dragon Scale Studio — a place where kids can learn piano, explore music fundamentals, and build real skills in an environment that feels fun, creative, and encouraging.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Whether we're teaching in our studio, running an after-school club at a local school, or working with homeschool families, our approach is always the same: meet kids where they are, make it fun, and help them grow.

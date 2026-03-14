@@ -11,7 +11,7 @@ const Footer = () => {
               <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                 <Music className="w-5 h-5 text-primary-foreground" />
               </div>
-              <span className="font-display text-xl font-bold">Harmony Labs</span>
+              <span className="font-display text-xl font-bold">Dragon Scale Studio</span>
             </div>
             <p className="text-background/60 text-sm leading-relaxed">
               Fun and engaging music education for kids. Piano lessons and after-school music clubs that build confidence, creativity, and real musical skills.
@@ -54,7 +54,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-background/10 mt-12 pt-8 text-center text-sm text-background/40">
-          <p>© {new Date().getFullYear()} Harmony Labs. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Dragon Scale Music Studio by Angela King. All rights reserved.</p>
         </div>
       </div>
     </footer>
