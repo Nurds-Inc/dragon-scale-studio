@@ -37,10 +37,10 @@ const programs = [
 
 
 const features = [
-{ icon: Star, label: "Beginner-friendly piano learning" },
-{ icon: Heart, label: "Creativity and confidence building" },
-{ icon: Sparkles, label: "Fun group learning experiences" },
-{ icon: Music, label: "Real music fundamentals" }];
+{ icon: Star, label: "Supportive instruction for all levels" },
+{ icon: Music, label: "Strong foundations in music" },
+{ icon: Sparkles, label: "Piano, Voice and instrumental exploration" },
+{ icon: Heart, label: "Creativity and confidence building" }];
 
 
 const Index = () => {
