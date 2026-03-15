@@ -50,7 +50,7 @@ const Index = () => {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/30" />
+          <div className="absolute inset-0 bg-background/30 backdrop-blur-sm" />
         </div>
         {/* Centered two-column layout: dragon + text stay together */}
         <div className="relative w-full flex items-center justify-center min-h-[90vh] px-4">
