@@ -93,7 +93,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Text side */}
             <div>
-              <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Philosophy</span>
+              <span className="text-highlight font-bold text-sm uppercase tracking-wider">Our Philosophy</span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mt-3 mb-6">
                 Where Musical Journeys Begin
               </h2>
@@ -101,17 +101,17 @@ const Index = () => {
                 At Dragon Scale Music Studio, we believe music education should be engaging, creative, and confidence-building. Our teaching approach focuses on helping students develop strong musical foundations while encouraging curiosity, expression, and a lifelong appreciation for music. Whether someone is beginning their first instrument or continuing to grow as a musician, every student is supported on their unique musical journey.
               </p>
               <Link to="/about">
-                <Button variant="accent" size="lg">
+                <Button variant="highlight" size="lg">
                   Learn More About Us <ArrowRight className="w-4 h-4 ml-1" />
                 </Button>
               </Link>
             </div>
             {/* Feature cards side */}
             <div className="grid sm:grid-cols-2 gap-4">
-              {features.map((feature) => (
-                <div key={feature.label} className="bg-primary-foreground/10 backdrop-blur-sm border border-primary-foreground/10 rounded-3xl p-6 flex flex-col items-center text-center gap-3 hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center">
-                    <feature.icon className="w-7 h-7 text-accent" />
+              {features.map((feature, i) => (
+                <div key={feature.label} className={`backdrop-blur-sm border border-primary-foreground/10 rounded-3xl p-6 flex flex-col items-center text-center gap-3 hover:-translate-y-1 transition-transform duration-300 ${i % 2 === 0 ? 'bg-highlight/15' : 'bg-fun/15'}`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${i % 2 === 0 ? 'bg-highlight/25' : 'bg-fun/25'}`}>
+                    <feature.icon className={`w-7 h-7 ${i % 2 === 0 ? 'text-highlight' : 'text-fun'}`} />
                   </div>
                   <span className="font-semibold text-primary-foreground text-sm">{feature.label}</span>
                 </div>
