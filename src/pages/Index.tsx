@@ -52,40 +52,35 @@ const Index = () => {
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-background/30" />
         </div>
-        {/* Two-column layout: dragon + text */}
-        <div className="relative w-full grid md:grid-cols-[minmax(300px,500px)_1fr] items-center min-h-[90vh]">
-          {/* Dragon column */}
-          <div className="hidden md:flex h-full items-stretch overflow-hidden ml-[-40px]">
-            <img
-              src={flyerDragon}
-              alt="Watercolor music dragon"
-              className="w-full h-full object-cover object-center drop-shadow-lg" />
-          </div>
-          {/* Content column */}
-          <div className="flex items-center justify-center px-4 md:px-12 py-10">
-            <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-6 md:px-8">
-            <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
-
-            </h1>
-            <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 pt-0 md:text-3xl text-fun">Engaging music instruction that helps students grow, 
-create, and build lasting musical skills
-
-</p>
-            <p className="text-base text-foreground font-semibold mb-10 animate-fade-up delay-200 md:text-xl">Private Lessons • Homeschool Classes • After-School Clubs
-
-            </p>
-            <div className="flex flex-col items-center gap-4 animate-fade-up delay-300">
-              <Link to="/piano-lessons">
-                <Button size="xl" variant="highlight" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
-                  Start Lessons
-                </Button>
-              </Link>
-              <Link to="/schools">
-                <Button size="xl" variant="accent" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
-                  Bring a Club to Your School
-                </Button>
-              </Link>
+        {/* Centered two-column layout: dragon + text stay together */}
+        <div className="relative w-full flex items-center justify-center min-h-[90vh] px-4">
+          <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] items-center max-w-5xl w-full">
+            {/* Dragon column */}
+            <div className="hidden md:flex h-[70vh] items-stretch overflow-hidden rounded-l-3xl">
+              <img
+                src={flyerDragon}
+                alt="Watercolor music dragon"
+                className="w-full h-full object-cover object-center drop-shadow-lg" />
             </div>
+            {/* Content column */}
+            <div className="flex items-center justify-center py-10">
+              <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl md:rounded-l-none py-10 px-6 md:px-8">
+                <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio</h1>
+                <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 pt-0 md:text-3xl text-fun">Engaging music instruction that helps students grow, create, and build lasting musical skills</p>
+                <p className="text-base text-foreground font-semibold mb-10 animate-fade-up delay-200 md:text-xl">Private Lessons • Homeschool Classes • After-School Clubs</p>
+                <div className="flex flex-col items-center gap-4 animate-fade-up delay-300">
+                  <Link to="/piano-lessons">
+                    <Button size="xl" variant="highlight" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
+                      Start Lessons
+                    </Button>
+                  </Link>
+                  <Link to="/schools">
+                    <Button size="xl" variant="accent" className="min-w-[280px] rounded-full text-base tracking-wider uppercase">
+                      Bring a Club to Your School
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
