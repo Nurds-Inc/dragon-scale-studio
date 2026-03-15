@@ -174,7 +174,7 @@ const Index = () => {
               <div className="relative">
                 <div className="text-4xl mb-4">🏫</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Schools</h3>
-                <p className="text-primary-foreground/80 mb-6">Bring a structured, engaging music enrichment program to your campus. Easy to host, loved by students.</p>
+                <p className="text-primary-foreground/80 mb-6">Bring a structured and engaging music enrichment program to your campus. Dragon Scale Music Studio partners with schools to provide after-school music clubs that introduce students to piano and foundational music skills in a fun group environment.</p>
                 <Link to="/schools">
                   <Button variant="accent" size="lg">Partner With Us</Button>
                 </Link>
