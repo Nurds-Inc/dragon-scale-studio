@@ -29,7 +29,7 @@ const programs = [
 {
   icon: BookOpen,
   title: "Homeschool Music Programs",
-  description: "Music education customized for homeschool families and groups wants and needs.",
+  description: "Music education designed for homeschool families and groups, customized to meet their learning goals and interests.",
   link: "/homeschool",
   color: "bg-accent/10",
   iconColor: "text-accent"
