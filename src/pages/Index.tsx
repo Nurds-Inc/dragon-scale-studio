@@ -13,7 +13,7 @@ const programs = [
 {
   icon: Music,
   title: "Piano Lessons",
-  description: "Individual and small group piano instruction for kids of all levels. Fun, engaging, and confidence-building.",
+  description: "Private and group piano instruction designed to build strong musical foundations while developing confidence, creativity and expressive playing.",
   link: "/piano-lessons",
   color: "bg-primary/10",
   iconColor: "text-primary"
@@ -131,7 +131,7 @@ const Index = () => {
               Musical Journeys for Every Student
             </h2>
             <p className="text-muted-foreground text-lg">
-              From individual piano lessons to after-school clubs and homeschool programs — we have something for every young musician.
+              From private lessons to after-school clubs and homeschool programs — Dragon School Music Studio offers engaging programs for students at every stage of their musical journey.
             </p>
           </div>
 
