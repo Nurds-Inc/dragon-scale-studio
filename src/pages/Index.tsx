@@ -93,7 +93,7 @@ const Index = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Text side */}
             <div>
-              <span className="text-highlight font-bold text-sm uppercase tracking-wider">Our Philosophy</span>
+              <span className="text-accent font-bold text-sm uppercase tracking-wider">Our Philosophy</span>
               <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-primary-foreground mt-3 mb-6">
                 Where Musical Journeys Begin
               </h2>
