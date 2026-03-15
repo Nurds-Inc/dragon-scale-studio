@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
+import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles, Piano } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import flyerDragon from "@/assets/flyer-dragon.png";
