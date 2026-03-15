@@ -21,7 +21,7 @@ const programs = [
 {
   icon: Users,
   title: "After-School Music Clubs",
-  description: "Structured enrichment programs hosted at schools. Beginner piano, music fundamentals, and group learning.",
+  description: "Structured enrichment programs hosted at schools. Students explore beginner piano and music fundamentals through engaging group learning.",
   link: "/after-school-clubs",
   color: "bg-fun/10",
   iconColor: "text-fun"
