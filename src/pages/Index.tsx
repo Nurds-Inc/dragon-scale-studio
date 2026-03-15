@@ -54,7 +54,7 @@ const Index = () => {
         </div>
         {/* Centered two-column layout: dragon + text stay together */}
         <div className="relative w-full flex items-center justify-center min-h-[90vh] px-4">
-          <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] items-center max-w-5xl w-full">
+          <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] items-center max-w-5xl w-full">
             {/* Dragon column */}
             <div className="hidden md:flex h-[70vh] items-center justify-center rounded-l-3xl">
               <img
