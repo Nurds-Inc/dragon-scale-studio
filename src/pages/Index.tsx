@@ -86,6 +86,7 @@ create, and build lasting musical skills
                 </Button>
               </Link>
             </div>
+            </div>
           </div>
         </div>
       </section>
