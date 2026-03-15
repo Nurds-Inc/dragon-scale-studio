@@ -39,7 +39,7 @@ const programs = [
 const features = [
 { icon: Star, label: "Supportive instruction for all levels" },
 { icon: Music, label: "Strong foundations in music" },
-{ icon: Sparkles, label: "Piano, Voice and instrumental exploration" },
+{ icon: Sparkles, label: "Piano, voice, and instrumental exploration" },
 { icon: Heart, label: "Creativity and confidence building" }];
 
 
