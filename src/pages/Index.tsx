@@ -56,11 +56,11 @@ const Index = () => {
         <div className="relative w-full flex items-center justify-center min-h-[90vh] px-4">
           <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] items-center max-w-5xl w-full">
             {/* Dragon column */}
-            <div className="hidden md:flex h-[70vh] items-stretch overflow-hidden rounded-l-3xl">
+            <div className="hidden md:flex h-[70vh] items-center justify-center overflow-hidden rounded-l-3xl">
               <img
                 src={flyerDragon}
                 alt="Watercolor music dragon"
-                className="w-full h-full object-cover object-center drop-shadow-lg" />
+                className="h-[130%] w-auto object-contain drop-shadow-lg scale-150" />
             </div>
             {/* Content column */}
             <div className="flex items-center justify-center py-10">
