@@ -55,15 +55,15 @@ const Index = () => {
         {/* Centered two-column layout: dragon + text stay together */}
         <div className="relative w-full flex items-center justify-center min-h-[90vh] px-4">
           <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] items-center max-w-5xl w-full">
-            {/* Dragon column */}
-            <div className="hidden md:flex h-[70vh] items-center justify-center rounded-l-3xl">
+            {/* Dragon - above text on mobile, side column on desktop */}
+            <div className="flex justify-center md:h-[70vh] items-center rounded-l-3xl">
               <img
                 src={flyerDragon}
                 alt="Watercolor music dragon"
-                className="h-full w-auto object-contain drop-shadow-lg" />
+                className="h-40 md:h-full w-auto object-contain drop-shadow-lg" />
             </div>
             {/* Content column */}
-            <div className="flex items-center justify-center py-10 col-span-full md:col-span-1">
+            <div className="flex items-center justify-center pb-10 md:py-10">
               <div className="text-center max-w-2xl py-10 px-6 md:px-8">
                 <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio</h1>
                 <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 pt-0 md:text-3xl text-fun">Engaging music instruction that helps students grow, create, and build lasting musical skills</p>
