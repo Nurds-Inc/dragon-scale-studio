@@ -163,7 +163,7 @@ const Index = () => {
               <div className="relative">
                 <div className="text-4xl mb-4">👨‍👩‍👧‍👦</div>
                 <h3 className="font-display text-2xl font-bold mb-3">For Families</h3>
-                <p className="text-primary-foreground/80 mb-6">Looking for music lessons or want your child to join an after-school music club? We'd love to hear from you.</p>
+                <p className="text-primary-foreground/80 mb-6">Looking for engaging music lessons or a fun after-school music club? Dragon Scale Music Studio offers private or group lessons, homeschool classes, and school-based music programs designed to help students build confidence, creativity, and strong musical foundations.</p>
                 <Link to="/contact">
                   <Button variant="accent" size="lg">Get Started</Button>
                 </Link>
