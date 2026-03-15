@@ -52,17 +52,18 @@ const Index = () => {
           <img src={sheetMusicBg} alt="" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-background/30" />
         </div>
-        {/* Dragon hugging the left edge - scaled up to minimize whitespace */}
-        <div className="hidden md:flex absolute left-[-40px] top-[-20px] bottom-[-20px] md:w-[420px] lg:w-[500px] items-stretch overflow-hidden">
-          <img
-            src={flyerDragon}
-            alt="Watercolor music dragon"
-            className="w-full h-full object-cover object-center drop-shadow-lg" />
-          
-        </div>
-        {/* Content offset to the right */}
-        <div className="relative w-full flex items-center justify-center md:justify-end min-h-[90vh] px-4 md:pr-16">
-          <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-6 md:px-8">
+        {/* Two-column layout: dragon + text */}
+        <div className="relative w-full grid md:grid-cols-[minmax(300px,500px)_1fr] items-center min-h-[90vh]">
+          {/* Dragon column */}
+          <div className="hidden md:flex h-full items-stretch overflow-hidden ml-[-40px]">
+            <img
+              src={flyerDragon}
+              alt="Watercolor music dragon"
+              className="w-full h-full object-cover object-center drop-shadow-lg" />
+          </div>
+          {/* Content column */}
+          <div className="flex items-center justify-center px-4 md:px-12 py-10">
+            <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-6 md:px-8">
             <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
 
             </h1>
