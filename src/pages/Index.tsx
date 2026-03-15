@@ -86,10 +86,9 @@ create, and build lasting musical skills
                 </Button>
               </Link>
             </div>
-            </div>
-          </div>
           </div>
         </div>
+      </section>
 
       {/* About the Program */}
       <section className="py-24 bg-background">
