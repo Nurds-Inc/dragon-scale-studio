@@ -108,18 +108,14 @@ const Index = () => {
             </div>
             {/* Feature cards side */}
             <div className="grid sm:grid-cols-2 gap-4">
-              {features.map((feature, i) => {
-                const colors = ['highlight', 'fun', 'accent', 'highlight'];
-                const c = colors[i % 4];
-                return (
-                <div key={feature.label} className={`backdrop-blur-sm border border-primary-foreground/10 rounded-3xl p-6 flex flex-col items-center text-center gap-3 hover:-translate-y-1 transition-transform duration-300 bg-${c}/15`}>
-                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center bg-${c}/25`}>
-                    <feature.icon className={`w-7 h-7 text-${c}`} />
+              {features.map((feature) => (
+                <div key={feature.label} className={`backdrop-blur-sm border border-primary-foreground/10 rounded-3xl p-6 flex flex-col items-center text-center gap-3 hover:-translate-y-1 transition-transform duration-300 ${feature.bg}`}>
+                  <div className={`w-14 h-14 rounded-2xl flex items-center justify-center ${feature.iconBg}`}>
+                    <feature.icon className={`w-7 h-7 ${feature.iconColor}`} />
                   </div>
                   <span className="font-semibold text-primary-foreground text-sm">{feature.label}</span>
                 </div>
-                );
-              })}
+              ))}
             </div>
           </div>
         </div>
