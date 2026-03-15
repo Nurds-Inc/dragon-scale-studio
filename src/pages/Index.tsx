@@ -64,7 +64,7 @@ const Index = () => {
             </div>
             {/* Mobile background dragon */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none md:hidden">
-              <img src={flyerDragon} alt="" className="h-[60%] w-auto object-contain opacity-20" />
+              <img src={flyerDragon} alt="" className="h-[60%] w-auto object-contain opacity-40" />
             </div>
             {/* Content column */}
             <div className="relative flex items-center justify-center pb-10 md:py-10">
