@@ -61,8 +61,8 @@ const Index = () => {
           
         </div>
         {/* Content offset to the right */}
-        <div className="relative w-full flex items-center justify-end min-h-[90vh] pr-8 md:pr-16">
-          <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-8">
+        <div className="relative w-full flex items-center justify-center md:justify-end min-h-[90vh] px-4 md:pr-16">
+          <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-6 md:px-8">
             <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
 
             </h1>
