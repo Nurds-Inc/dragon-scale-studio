@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles } from "lucide-react";
+import { Music, Users, BookOpen, ArrowRight, Star, Heart, Sparkles, Piano } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import CTASection from "@/components/CTASection";
 import flyerDragon from "@/assets/flyer-dragon.png";
@@ -37,10 +37,10 @@ const programs = [
 
 
 const features = [
-{ icon: Star, label: "Beginner-friendly piano learning" },
-{ icon: Heart, label: "Creativity and confidence building" },
-{ icon: Sparkles, label: "Fun group learning experiences" },
-{ icon: Music, label: "Real music fundamentals" }];
+{ icon: Star, label: "Supportive instruction for all levels" },
+{ icon: Music, label: "Strong foundations in music" },
+{ icon: Sparkles, label: "Piano, Voice and instrumental exploration" },
+{ icon: Heart, label: "Creativity and confidence building" }];
 
 
 const Index = () => {
@@ -86,34 +86,34 @@ const Index = () => {
         </div>
       </section>
 
-      {/* About the Program */}
+      {/* Our Philosophy */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Dragon on LEFT */}
-            <div className="relative flex items-center justify-center">
-              
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-accent/20 rounded-full blur-2xl" />
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl" />
-            </div>
-            <div className="px-0">
-              <span className="text-primary font-bold text-sm uppercase tracking-wider">About Our Program</span>
-              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
-                Where Kids Discover the Joy of Music
-              </h2>
-              <p className="text-muted-foreground text-lg mb-8 leading-relaxed">
-                Our programs focus on making music fun, creative, and confidence-building for kids, while still teaching real musical skills and foundations. Whether it's their first time touching a keyboard or they're ready to perform, every student finds their place here.
-              </p>
-              <div className="grid sm:grid-cols-2 gap-4">
-                {features.map((feature) => <div key={feature.label} className="flex items-center gap-3 p-3 rounded-2xl bg-muted">
-                    <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <feature.icon className="w-5 h-5 text-primary" />
-                    </div>
-                    <span className="font-semibold text-foreground text-sm">{feature.label}</span>
-                  </div>
-                )}
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <span className="text-primary font-bold text-sm uppercase tracking-wider">Our Philosophy</span>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 mb-6">
+              Where Musical Journeys Begin
+            </h2>
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              At Dragon Scale Music Studio, we believe music education should be engaging, creative, and confidence-building. Our teaching approach focuses on helping students develop strong musical foundations while encouraging curiosity, expression, and a lifelong appreciation for music. Whether someone is beginning their first instrument or continuing to grow as a musician, every student is supported on their unique musical journey.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {features.map((feature) => (
+              <div key={feature.label} className="flex flex-col items-center text-center gap-3 p-6 rounded-3xl bg-muted">
+                <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <feature.icon className="w-7 h-7 text-primary" />
+                </div>
+                <span className="font-semibold text-foreground text-sm">{feature.label}</span>
               </div>
-            </div>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link to="/about">
+              <Button variant="outline" size="lg">
+                Learn More About Us <ArrowRight className="w-4 h-4 ml-1" />
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
