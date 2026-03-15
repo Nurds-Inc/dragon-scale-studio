@@ -53,7 +53,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/30" />
         </div>
         {/* Dragon hugging the left edge - scaled up to minimize whitespace */}
-        <div className="absolute left-[-60px] md:left-[-40px] top-[-20px] bottom-[-20px] w-[340px] md:w-[420px] lg:w-[500px] flex items-stretch overflow-hidden">
+        <div className="absolute left-[-60px] md:left-[-40px] top-[-20px] bottom-[-20px] w-[280px] md:w-[340px] lg:w-[400px] flex items-stretch overflow-hidden">
           <img
             src={flyerDragon}
             alt="Watercolor music dragon"
