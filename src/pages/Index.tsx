@@ -12,8 +12,8 @@ import sheetMusicBg from "@/assets/sheet-music-bg.jpg";
 const programs = [
 {
   icon: Music,
-  title: "Piano Lessons",
-  description: "Private and group piano instruction designed to build strong musical foundations while developing confidence, creativity and expressive playing.",
+  title: "Music Lessons",
+  description: "Private and small-group music instruction designed to build strong musical foundations while developing confidence, creativity, and expressive musicianship. Lessons may include piano, voice, and other instruments depending on the student's interests and goals.",
   link: "/piano-lessons",
   color: "bg-primary/10",
   iconColor: "text-primary"
