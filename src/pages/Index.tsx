@@ -55,12 +55,13 @@ const Index = () => {
         {/* Centered two-column layout: dragon + text stay together */}
         <div className="relative w-full flex items-center justify-center min-h-[90vh] px-4">
           <div className="grid md:grid-cols-[280px_1fr] lg:grid-cols-[400px_1fr] items-center max-w-5xl w-full">
-            {/* Dragon column */}
-            <div className="hidden md:flex h-[70vh] items-center justify-center overflow-hidden rounded-l-3xl bg-background">
+            {/* Dragon column — use mix-blend-mode to blend transparent PNG over sheet music bg */}
+            <div className="hidden md:block h-[70vh] overflow-hidden rounded-l-3xl relative">
+              <div className="absolute inset-0 bg-background" />
               <img
                 src={flyerDragon}
                 alt="Watercolor music dragon"
-                className="h-[130%] w-auto object-contain drop-shadow-lg scale-150" />
+                className="relative h-full w-full object-contain drop-shadow-lg" />
             </div>
             {/* Content column */}
             <div className="flex items-center justify-center py-10">
