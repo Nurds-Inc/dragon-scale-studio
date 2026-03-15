@@ -13,7 +13,7 @@ const programs = [
 {
   icon: Music,
   title: "Piano Lessons",
-  description: "Individual and small group piano instruction for kids of all levels. Fun, engaging, and confidence-building.",
+  description: "Private and group piano instruction designed to build strong musical foundations while developing confidence, creativity and expressive playing.",
   link: "/piano-lessons",
   color: "bg-primary/10",
   iconColor: "text-primary"
