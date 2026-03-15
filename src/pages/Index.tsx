@@ -131,7 +131,7 @@ const Index = () => {
               Musical Journeys for Every Student
             </h2>
             <p className="text-muted-foreground text-lg">
-              From individual piano lessons to after-school clubs and homeschool programs — we have something for every young musician.
+              From private lessons to after-school clubs and homeschool programs — Dragon School Music Studio offers engaging programs for students at every stage of their musical journey.
             </p>
           </div>
 
