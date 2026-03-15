@@ -53,7 +53,7 @@ const Index = () => {
           <div className="absolute inset-0 bg-background/30" />
         </div>
         {/* Dragon hugging the left edge - scaled up to minimize whitespace */}
-        <div className="hidden md:flex absolute left-[-40px] top-[-20px] bottom-[-20px] md:w-[420px] lg:w-[500px] items-stretch overflow-hidden bg-[#f5f0e8]">
+        <div className="hidden md:flex absolute left-[-40px] top-[-20px] bottom-[-20px] md:w-[420px] lg:w-[500px] items-stretch overflow-hidden">
           <img
             src={flyerDragon}
             alt="Watercolor music dragon"
@@ -61,8 +61,8 @@ const Index = () => {
           
         </div>
         {/* Content offset to the right */}
-        <div className="relative w-full flex items-center justify-center md:justify-center min-h-[90vh] px-4 md:pl-[460px] lg:pl-[540px] md:pr-16">
-          <div className="text-center w-full max-w-3xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-6 md:px-8">
+        <div className="relative w-full flex items-center justify-center md:justify-end min-h-[90vh] px-4 md:pr-16">
+          <div className="text-center max-w-2xl backdrop-blur-sm bg-background/20 rounded-3xl py-10 px-6 md:px-8">
             <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio
 
             </h1>
