@@ -68,7 +68,7 @@ const Index = () => {
             </div>
             {/* Content column */}
             <div className="relative flex items-center justify-center pb-10 md:py-10">
-              <div className="text-center max-w-2xl py-10 px-6 md:px-8" style={{ textShadow: '0 1px 8px hsl(40 30% 96% / 0.85), 0 0 20px hsl(40 30% 96% / 0.6)' }}>
+              <div className="text-center max-w-2xl py-10 px-6 md:px-8" style={{ textShadow: '0 0 12px hsl(40 30% 96%), 0 0 24px hsl(40 30% 96%), 0 0 40px hsl(40 30% 96% / 0.7)' }}>
                 <h1 className="font-display text-5xl md:text-6xl font-bold text-primary leading-tight mb-3 animate-fade-up lg:text-6xl">Dragon Scale Music Studio</h1>
                 <p className="text-lg mb-6 font-display font-semibold italic animate-fade-up delay-100 pt-0 md:text-3xl text-fun">Engaging music instruction that helps students grow, create, and build lasting musical skills</p>
                 <p className="text-base text-foreground font-semibold mb-10 animate-fade-up delay-200 md:text-xl">Private Lessons • Homeschool Classes • After-School Clubs</p>
