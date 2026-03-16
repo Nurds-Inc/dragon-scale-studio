@@ -38,17 +38,22 @@ const PianoLessons = () => {
   return (
     <PageLayout>
       {/* Hero */}
-      <section className="relative py-24 md:py-32 bg-primary overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+      <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+        {/* Background image */}
+        <div className="absolute inset-0">
+          <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-primary/70" />
+          <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: `url(${dragonScales})`, backgroundSize: '250px', backgroundRepeat: 'repeat' }} />
+        </div>
         {/* Decorative dragon */}
-        <img src={flyerDragon} alt="" className="absolute -right-16 bottom-0 h-[70%] w-auto object-contain opacity-[0.12] pointer-events-none hidden lg:block" />
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-3xl">
+        <img src={flyerDragon} alt="" className="absolute -right-10 bottom-0 h-[65%] w-auto object-contain opacity-20 pointer-events-none hidden lg:block drop-shadow-lg" />
+        <div className="relative container mx-auto px-4 py-24 md:py-32">
+          <div className="max-w-3xl" style={{ textShadow: '0 0 20px hsl(215 55% 25% / 0.6)' }}>
             <span className="text-accent font-bold text-sm uppercase tracking-wider">Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground mt-3 mb-5">
               Music Lessons
             </h1>
-            <p className="text-primary-foreground/85 text-lg md:text-xl leading-relaxed mb-3">
+            <p className="text-primary-foreground/90 text-lg md:text-xl leading-relaxed mb-3">
               Flexible music instruction designed to support students at many stages of their musical journey.
             </p>
             <p className="text-highlight font-semibold text-base md:text-lg mb-10">
