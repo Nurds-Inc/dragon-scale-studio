@@ -49,8 +49,8 @@ const PianoLessons = () => {
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
             </h1>
-            <p className="text-foreground text-lg md:text-xl leading-relaxed mb-3">
-              Flexible music instruction designed to support students at many stages of their musical journey.
+            <p className="text-foreground text-lg md:text-xl leading-relaxed mb-3 whitespace-pre-line">
+              {"Flexible music instruction designed to support students\nat many stages of their musical journey.\n\n"}
             </p>
             <p className="text-accent font-semibold text-base md:text-lg mb-10">
               Private Lessons • Small Group Lessons • Instrumental and Vocal Study
