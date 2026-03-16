@@ -9,7 +9,7 @@ const Navbar = () => {
 
   const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Piano Lessons", href: "/piano-lessons" },
+  { label: "Lessons", href: "/piano-lessons" },
   { label: "After-School Clubs", href: "/after-school-clubs" },
   { label: "Homeschool", href: "/homeschool" },
   { label: "For Schools", href: "/schools" },
