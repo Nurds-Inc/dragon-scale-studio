@@ -42,8 +42,10 @@ const PianoLessons = () => {
         <div className="absolute inset-0">
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
         </div>
+        {/* Full-coverage frosted glass overlay — opaque center, clear edges */}
+        <div className="absolute inset-0" style={{ background: 'radial-gradient(ellipse at center, hsl(40 30% 96% / 0.75) 0%, hsl(40 30% 96% / 0.5) 40%, hsl(40 30% 96% / 0.05) 80%, transparent 100%)', backdropFilter: 'blur(6px)', WebkitBackdropFilter: 'blur(6px)', maskImage: 'radial-gradient(ellipse at center, black 0%, black 35%, rgba(0,0,0,0.3) 70%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 0%, black 35%, rgba(0,0,0,0.3) 70%, transparent 100%)' }} />
         <div className="relative container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-3xl mx-auto text-center rounded-3xl px-8 py-12 md:px-14 md:py-16 shadow-soft" style={{ background: 'radial-gradient(ellipse at center, hsl(40 30% 96% / 0.75) 0%, hsl(40 30% 96% / 0.7) 55%, hsl(40 30% 96% / 0) 100%)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', maskImage: 'radial-gradient(ellipse at center, black 55%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 55%, transparent 100%)' }}>
+          <div className="max-w-3xl mx-auto text-center px-8 py-12 md:px-14 md:py-16">
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
