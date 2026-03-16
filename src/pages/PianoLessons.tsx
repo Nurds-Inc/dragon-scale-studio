@@ -41,7 +41,6 @@ const PianoLessons = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/20" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center rounded-3xl px-8 py-12 md:px-14 md:py-16 shadow-soft" style={{ background: 'radial-gradient(ellipse at center, hsl(40 30% 96% / 0.75) 0%, hsl(40 30% 96% / 0.7) 55%, hsl(40 30% 96% / 0) 100%)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', maskImage: 'radial-gradient(ellipse at center, black 55%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 55%, transparent 100%)' }}>
