@@ -45,7 +45,7 @@ const PianoLessons = () => {
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center" style={{ textShadow: '0 0 16px hsl(40 30% 96%), 0 0 32px hsl(40 30% 96%), 0 0 48px hsl(40 30% 96% / 0.6)' }}>
-            <span className="text-primary font-bold text-sm uppercase tracking-wider">Lessons</span>
+            <span className="text-primary font-bold text-sm uppercase tracking-wider" style={{ textShadow: '0 0 20px hsl(40 30% 96%), 0 0 40px hsl(40 30% 96%), 0 0 60px hsl(40 30% 96%), 0 0 80px hsl(40 30% 96% / 0.5)' }}>Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
             </h1>
