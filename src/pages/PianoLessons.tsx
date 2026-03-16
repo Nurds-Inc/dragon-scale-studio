@@ -6,7 +6,7 @@ import CTASection from "@/components/CTASection";
 import flyerDragon from "@/assets/flyer-dragon.png";
 import dragonPiano from "@/assets/dragon-piano.png";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
-import sheetMusicBg from "@/assets/sheet-music-bg.jpg";
+import lessonsHeroBg from "@/assets/lessons-hero-bg.jpg";
 
 const areasOfStudy = [
   { icon: Music, label: "Piano", color: "bg-primary/10", iconColor: "text-primary" },
