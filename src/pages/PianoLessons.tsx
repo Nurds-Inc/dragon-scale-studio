@@ -43,8 +43,8 @@ const PianoLessons = () => {
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-2xl bg-background/80 backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-medium">
-            <span className="text-accent font-bold text-sm uppercase tracking-wider">Lessons</span>
+          <div className="max-w-3xl" style={{ textShadow: '0 0 16px hsl(40 30% 96%), 0 0 32px hsl(40 30% 96%), 0 0 48px hsl(40 30% 96% / 0.6)' }}>
+            <span className="text-primary font-bold text-sm uppercase tracking-wider">Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
             </h1>
