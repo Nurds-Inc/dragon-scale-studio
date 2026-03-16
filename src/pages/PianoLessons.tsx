@@ -60,7 +60,7 @@ const PianoLessons = () => {
                 <Button size="xl" variant="default">Schedule a Lesson</Button>
               </Link>
               <Link to="/contact">
-                <Button size="xl" variant="outline">Contact the Studio</Button>
+                <Button size="xl" variant="fun">Contact the Studio</Button>
               </Link>
             </div>
           </div>
