@@ -43,7 +43,7 @@ const PianoLessons = () => {
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-3xl mx-auto text-center bg-background/70 backdrop-blur-md rounded-3xl px-8 py-12 md:px-14 md:py-16 shadow-soft">
+          <div className="max-w-3xl mx-auto text-center rounded-3xl px-8 py-12 md:px-14 md:py-16 shadow-soft" style={{ background: 'radial-gradient(ellipse at center, hsl(40 30% 96% / 0.75) 0%, hsl(40 30% 96% / 0.5) 50%, hsl(40 30% 96% / 0) 100%)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse at center, black 40%, transparent 100%)' }}>
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
