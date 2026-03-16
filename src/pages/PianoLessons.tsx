@@ -41,7 +41,7 @@ const PianoLessons = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/75 backdrop-blur-sm" />
+          <div className="absolute inset-0 bg-background/30 backdrop-blur-sm" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
           <div className="max-w-3xl mx-auto text-center" style={{ textShadow: '0 0 16px hsl(40 30% 96%), 0 0 32px hsl(40 30% 96%), 0 0 48px hsl(40 30% 96% / 0.6)' }}>
