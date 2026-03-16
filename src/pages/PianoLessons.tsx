@@ -41,10 +41,9 @@ const PianoLessons = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/20 backdrop-blur-[1px]" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-3xl mx-auto text-center" style={{ textShadow: '0 0 24px hsl(40 30% 96%), 0 0 48px hsl(40 30% 96%), 0 0 72px hsl(40 30% 96%), 0 0 96px hsl(40 30% 96% / 0.5)' }}>
+          <div className="max-w-3xl mx-auto text-center bg-background/70 backdrop-blur-md rounded-3xl px-8 py-12 md:px-14 md:py-16 shadow-soft">
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
