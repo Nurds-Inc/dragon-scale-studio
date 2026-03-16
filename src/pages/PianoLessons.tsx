@@ -41,9 +41,10 @@ const PianoLessons = () => {
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
           <img src={lessonsHeroBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/60 backdrop-blur-sm" />
         </div>
         <div className="relative container mx-auto px-4 py-24 md:py-32">
-          <div className="max-w-3xl" style={{ textShadow: '0 0 16px hsl(40 30% 96%), 0 0 32px hsl(40 30% 96%), 0 0 48px hsl(40 30% 96% / 0.6)' }}>
+          <div className="max-w-3xl mx-auto text-center" style={{ textShadow: '0 0 16px hsl(40 30% 96%), 0 0 32px hsl(40 30% 96%), 0 0 48px hsl(40 30% 96% / 0.6)' }}>
             <span className="text-primary font-bold text-sm uppercase tracking-wider">Lessons</span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-primary mt-3 mb-5">
               Music Lessons
@@ -54,7 +55,7 @@ const PianoLessons = () => {
             <p className="text-accent font-semibold text-base md:text-lg mb-10">
               Private Lessons • Small Group Lessons • Instrumental and Vocal Study
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link to="/contact">
                 <Button size="xl" variant="default">Schedule a Lesson</Button>
               </Link>
