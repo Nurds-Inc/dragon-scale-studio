@@ -1,73 +1,210 @@
-# Welcome to your Lovable project
+# 🎯 Dragon Scale Studio - Ready to Launch
 
-## Project info
+**Repository:** https://github.com/Nurds-Inc/dragon-scale-studio  
+**Target:** https://dragonscalestudio.com  
+**Status:** ✅ Code complete, ⏳ Waiting for deployment
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## What's Ready
 
-There are several ways of editing your application.
+✅ **All Code Complete**
+- 9 pages (Home, Lessons, Clubs, Schools, About, Contact, Privacy, Terms, 404)
+- Build tested and passing
+- Docker image ready to build
+- Security hardened (non-root, read-only filesystem, PSS restricted)
 
-**Use Lovable**
+✅ **Infrastructure Complete**
+- Kubernetes manifests validated
+- GitHub Actions workflows configured
+- Argo CD Application ready
+- Namespace configuration ready
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+✅ **Documentation Complete**
+- Quick start guide
+- Detailed deployment guide
+- Troubleshooting documentation
+- Architecture documentation
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🚀 How to Launch (Choose One)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Option A: Automated Script (Easiest)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+If you have cluster admin kubectl access:
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```bash
+cd /workspace/clients/dragon-scale-studio
+./deploy.sh
 ```
 
-**Edit a file directly in GitHub**
+The script will:
+1. Create namespace
+2. Create GHCR pull secret (will prompt for GitHub PAT)
+3. Create Argo CD Application
+4. Show deployment status
+5. Print next steps for Cloudflare DNS
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+### Option B: Manual Steps
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+#### Step 1: Fix GHCR Permissions
 
-## What technologies are used for this project?
+Go to: https://github.com/organizations/Nurds-Inc/settings/packages
 
-This project is built with:
+Enable: "Allow members to create public packages"
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Then trigger build:
+```bash
+gh workflow run docker-build.yml --repo Nurds-Inc/dragon-scale-studio
+```
 
-## How can I deploy this project?
+#### Step 2: Apply Kubernetes Resources
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```bash
+# Create namespace
+kubectl apply -f /workspace/nurds-cluster/projects/nurds-clients/namespaces.yaml
 
-## Can I connect a custom domain to my Lovable project?
+# Create GHCR pull secret
+kubectl create secret docker-registry ghcr-pull-secret \
+  -n dragon-scale-studio \
+  --docker-server=ghcr.io \
+  --docker-username=nurdsinc \
+  --docker-password=YOUR_GITHUB_PAT_WITH_READ_PACKAGES
 
-Yes, you can!
+# Create Argo CD Application
+kubectl apply -f /workspace/nurds-cluster/gitops/app-dragon-scale-studio.yaml
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+#### Step 3: Configure Cloudflare DNS
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+**Dashboard:** https://dash.cloudflare.com → dragonscalestudio.com
+
+**Add DNS Records:**
+
+| Type  | Name | Target                                                    | Proxy |
+|-------|------|-----------------------------------------------------------|-------|
+| CNAME | @    | c42f8bb4-c0c7-41c5-8cb6-5cc8038a13d8.cfargotunnel.com    | ON 🟧 |
+| CNAME | www  | c42f8bb4-c0c7-41c5-8cb6-5cc8038a13d8.cfargotunnel.com    | ON 🟧 |
+
+**Update Certificate:**
+- Go to: SSL/TLS → Edge Certificates → Advanced Certificate
+- Click "Edit"
+- Add SANs: `dragonscalestudio.com` and `*.dragonscalestudio.com`
+- Wait 5-10 minutes for issuance
+
+---
+
+## ✅ Verify Deployment
+
+```bash
+# Check pods
+kubectl get pods -n dragon-scale-studio
+# Should show: 2/2 Running
+
+# Check Argo CD
+argocd app get dragon-scale-studio
+# Should show: Sync Status: Synced, Health Status: Healthy
+
+# Check site (after DNS configured)
+curl -I https://dragonscalestudio.com
+# Should return: HTTP/2 200
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Pods stuck in ImagePullBackOff
+**Cause:** GHCR pull secret missing or invalid  
+**Fix:** 
+```bash
+kubectl describe pod -n dragon-scale-studio
+# Check the error message
+
+# Recreate secret
+kubectl delete secret ghcr-pull-secret -n dragon-scale-studio
+kubectl create secret docker-registry ghcr-pull-secret \
+  -n dragon-scale-studio \
+  --docker-server=ghcr.io \
+  --docker-username=nurdsinc \
+  --docker-password=YOUR_GITHUB_PAT
+```
+
+### Argo CD not syncing
+**Cause:** Application not configured or path incorrect  
+**Fix:**
+```bash
+# Check Argo CD app status
+argocd app get dragon-scale-studio
+
+# Manual sync
+argocd app sync dragon-scale-studio
+```
+
+### Site returns 502
+**Cause:** Pods not ready  
+**Fix:**
+```bash
+# Check pod logs
+kubectl logs -n dragon-scale-studio -l app.kubernetes.io/name=dragon-scale-studio
+
+# Check pod status
+kubectl describe pod -n dragon-scale-studio
+```
+
+### Certificate error
+**Cause:** Advanced Certificate doesn't include SANs yet  
+**Fix:** Wait 5-10 minutes after adding SANs, or check Cloudflare dashboard
+
+---
+
+## 📚 Documentation Files
+
+- **README.md** (this file) - Quick start
+- **QUICK-LAUNCH.md** - 3-step checklist
+- **LAUNCH-STATUS.md** - Current blockers and detailed fixes
+- **PRODUCTION-LAUNCH.md** - Complete step-by-step guide
+- **STATUS.md** - Project overview
+- **DEPLOYMENT.md** - Architecture and deployment details
+- **deploy.sh** - Automated deployment script
+
+---
+
+## 🎉 After Launch
+
+Once the site is live:
+
+1. **Set Google Analytics ID**
+   ```bash
+   # Add to deployment environment
+   VITE_GA_TRACKING_ID=G-XXXXXXXXXX
+   ```
+
+2. **Monitor Logs**
+   ```bash
+   kubectl logs -n dragon-scale-studio -l app.kubernetes.io/name=dragon-scale-studio -f
+   ```
+
+3. **Check Resource Usage**
+   ```bash
+   kubectl top pods -n dragon-scale-studio
+   ```
+
+4. **Future Updates**
+   - Push to main branch → GitHub Actions builds → Argo CD deploys
+   - Zero downtime rolling updates
+   - Automatic rollback on failure
+
+---
+
+## 📞 Support
+
+**Repository:** https://github.com/Nurds-Inc/dragon-scale-studio  
+**Issues:** https://github.com/Nurds-Inc/dragon-scale-studio/issues
+
+---
+
+**Everything is ready. Just run `./deploy.sh` or follow the manual steps above!** 🚀
