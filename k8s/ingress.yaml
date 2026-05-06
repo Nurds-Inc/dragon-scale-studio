@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: dragon-scale-studio
+  namespace: dragon-scale-studio
+  labels:
+    app.kubernetes.io/name: dragon-scale-studio
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`dragonscalestudio.com`) || Host(`www.dragonscalestudio.com`)
+    kind: Rule
+    services:
+    - name: dragon-scale-studio
+      port: 80
+  tls:
+    certResolver: cloudflare

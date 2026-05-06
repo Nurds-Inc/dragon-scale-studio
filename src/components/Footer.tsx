@@ -46,11 +46,11 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-primary-foreground/60">
               <li className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-accent" />
-                <span>hello@harmonylabs.com</span>
+                <span>angela@dragonscalestudio.com</span>
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-accent" />
-                <span>(555) 123-4567</span>
+                <span>(480) 588-0709</span>
               </li>
             </ul>
           </div>
@@ -58,6 +58,11 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/10 mt-12 pt-8 text-center text-sm text-primary-foreground/40">
           <p>© {new Date().getFullYear()} Dragon Scale Music Studio by Angela King. All rights reserved.</p>
+          <div className="mt-2 space-x-4">
+            <Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link>
+            <span>·</span>
+            <Link to="/terms" className="hover:text-accent transition-colors">Terms of Service</Link>
+          </div>
         </div>
       </div>
     </footer>

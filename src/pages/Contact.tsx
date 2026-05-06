@@ -71,7 +71,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">Email</h4>
-                    <p className="text-muted-foreground text-sm">hello@harmonylabs.com</p>
+                    <p className="text-muted-foreground text-sm">angela@dragonscalestudio.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4 p-4 rounded-2xl bg-muted">
@@ -80,7 +80,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-foreground">Phone</h4>
-                    <p className="text-muted-foreground text-sm">(555) 123-4567</p>
+                    <p className="text-muted-foreground text-sm">(480) 588-0709</p>
                   </div>
                 </div>
               </div>
