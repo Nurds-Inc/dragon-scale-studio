@@ -1,13 +1,14 @@
 # Sandbox configuration for Dragon Scale Studio
 # This enables auto-sync with GitHub for the sandbox environment
 
+runtime: node-bun
+command: bun install && bun run dev -- --host 0.0.0.0 --port 3000
+autostart: true
+health_path: /
+
 # Enable automatic git pull every 5 seconds
 sync:
   enabled: true
   branch: main
   interval_seconds: 5
   rebase: true
-
-# Runtime is auto-detected (node-bun)
-# Command is auto-detected (bun install && bun run dev)
-# Autostart is auto-detected (true)
