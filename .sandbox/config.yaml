@@ -1,14 +1,17 @@
 # Sandbox configuration for Dragon Scale Studio
-# This enables auto-sync with GitHub for the sandbox environment
+# Enables live preview with automatic git sync for development
 
 runtime: node-bun
-command: bun install && bun run dev -- --host 0.0.0.0 --port 3000
 autostart: true
 health_path: /
 
-# Enable automatic git pull every 5 seconds
+# Git sync configuration - auto-pull changes from GitHub
 sync:
   enabled: true
   branch: main
   interval_seconds: 5
   rebase: true
+
+# Override default command to match vite.config.ts settings
+command: |
+  bun install && bun run dev -- --host :: --port 8080

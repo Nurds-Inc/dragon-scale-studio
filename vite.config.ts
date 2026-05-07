@@ -8,6 +8,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: true, // Allow sandbox.nurds.com hosts
     hmr: {
       overlay: false,
     },
