@@ -37,7 +37,7 @@
 ## 🚀 Dev Environment (SPECIAL CASE)
 
 ### Live URL
-- **Dev Preview**: https://dss.sandbox.nurds.com
+- **Dev Preview**: https://dev.dragonscalestudio.com
 - **Status**: Running with live git-sync ✅
 
 ### Infrastructure
