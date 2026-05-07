@@ -1,17 +1,13 @@
 # Sandbox configuration for Dragon Scale Studio
-# Enables live preview with automatic git sync for development
+# Manual runtime for better control during development
 
-runtime: node-bun
-autostart: false  # Disable autostart to debug
+runtime: manual
+autostart: false
 health_path: /
 
 # Git sync configuration - auto-pull changes from GitHub
 sync:
   enabled: true
   branch: main
-  interval_seconds: 5
+  interval_seconds: 10
   rebase: true
-
-# Override default command to match vite.config.ts settings
-command: |
-  bun install && bun run dev -- --host :: --port 8080
