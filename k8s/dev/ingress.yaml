@@ -9,7 +9,7 @@ spec:
   entryPoints:
     - web
   routes:
-  - match: Host(`dss.sandbox.nurds.com`)
+  - match: Host(`dev.dragonscalestudio.com`)
     kind: Rule
     services:
     - name: dragon-scale-studio-dev
