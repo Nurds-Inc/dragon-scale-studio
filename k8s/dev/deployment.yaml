@@ -101,7 +101,7 @@ spec:
       # Dev server container
       - name: app
         image: oven/bun:1.1-alpine
-        workingDir: /repo/dragon-scale-studio
+        workingDir: /repo/dragon-scale-studio.git
         command:
           - /bin/sh
           - -c
