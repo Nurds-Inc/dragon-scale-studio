@@ -2,7 +2,7 @@
 # Enables live preview with automatic git sync for development
 
 runtime: node-bun
-autostart: true
+autostart: false  # Disable autostart to debug
 health_path: /
 
 # Git sync configuration - auto-pull changes from GitHub
