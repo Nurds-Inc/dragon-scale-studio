@@ -46,10 +46,6 @@ const features = [
 const Index = () => {
   return (
     <PageLayout>
-      {/* DEV TEST: Live Git-Sync Banner */}
-      <div className="bg-fun text-white py-2 text-center font-bold text-sm">
-        🚀 DEV MODE: Live Git-Sync Active (10s refresh)
-      </div>
       {/* Hero Section - Sheet Music + Dragon */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">
