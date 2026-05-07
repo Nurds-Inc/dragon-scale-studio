@@ -38,6 +38,8 @@ spec:
         emptyDir: {}
       - name: cache
         emptyDir: {}
+      - name: tmp
+        emptyDir: {}
       
       # Init container to do initial clone
       initContainers:
@@ -51,6 +53,8 @@ spec:
         volumeMounts:
         - name: repo
           mountPath: /repo
+        - name: tmp
+          mountPath: /tmp
         securityContext:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
@@ -78,6 +82,8 @@ spec:
         volumeMounts:
         - name: repo
           mountPath: /repo
+        - name: tmp
+          mountPath: /tmp
         securityContext:
           allowPrivilegeEscalation: false
           readOnlyRootFilesystem: true
