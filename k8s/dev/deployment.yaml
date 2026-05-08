@@ -122,7 +122,7 @@ spec:
                 echo "Installing dependencies..."
                 bun install --frozen-lockfile || bun install
                 echo "Starting dev server..."
-                bun run dev --host :: --port 8080 &
+                bun run dev --host :: --port 8080 --force &
                 VITE_PID=$!
                 while [ "$(readlink /repo/dragon-scale-studio || true)" = "$LAST_REV" ]; do
                   sleep 2
