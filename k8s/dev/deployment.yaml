@@ -11,10 +11,13 @@ metadata:
     app.kubernetes.io/component: frontend
     app.kubernetes.io/environment: development
 spec:
-  replicas: 1
+  replicas: 2
   revisionHistoryLimit: 2
   strategy:
-    type: Recreate  # Dev environment, don't need rolling updates
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: dragon-scale-studio-dev
