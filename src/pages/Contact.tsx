@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,21 +8,143 @@ import { toast } from "@/hooks/use-toast";
 import PageLayout from "@/components/PageLayout";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 import flyerDragon from "@/assets/flyer-dragon.png";
+import { trackFormSubmit } from "@/lib/analytics";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.sandbox.nurds.com";
+const LEAD_ENDPOINT = `${API_BASE_URL}/api/v1/public/workspaces/dragon-scale/leads`;
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "0x4AAAAAADK-pq5fJkCLoMDR";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        target: string | HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          "expired-callback"?: () => void;
+          "error-callback"?: () => void;
+          appearance?: "always" | "interaction-only" | "execute";
+        }
+      ) => string;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
 
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [audienceType, setAudienceType] = useState("");
+  const [programInterest, setProgramInterest] = useState("");
+  const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<HTMLDivElement | null>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY) return;
+
+    const renderWidget = () => {
+      if (!window.turnstile || !turnstileRef.current || turnstileWidgetId.current) return;
+      turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token) => setTurnstileToken(token),
+        "expired-callback": () => setTurnstileToken(""),
+        "error-callback": () => setTurnstileToken(""),
+        appearance: "always",
+      });
+    };
+
+    if (window.turnstile) {
+      renderWidget();
+      return;
+    }
+
+    const scriptSelector = 'script[src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"]';
+    const existing = document.querySelector<HTMLScriptElement>(scriptSelector);
+    if (existing) {
+      existing.addEventListener("load", renderWidget, { once: true });
+      return () => existing.removeEventListener("load", renderWidget);
+    }
+
+    const script = document.createElement("script");
+    script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+    script.async = true;
+    script.defer = true;
+    script.addEventListener("load", renderWidget, { once: true });
+    document.head.appendChild(script);
+
+    return () => script.removeEventListener("load", renderWidget);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+    try {
+      const parts = name.trim().split(/\s+/).filter(Boolean);
+      const firstName = parts[0] || name.trim();
+      const lastName = parts.slice(1).join(" ");
+      const response = await fetch(LEAD_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          company: "",
+          phone: phone || undefined,
+          message: message || undefined,
+          website: website || undefined,
+          sourceUrl: window.location.href,
+          turnstileToken: turnstileToken || undefined,
+          metadata: {
+            audienceType: audienceType || "",
+            programInterest: programInterest || "",
+          },
+        }),
+      });
+
+      if (!response.ok) {
+        if (turnstileWidgetId.current && window.turnstile) {
+          window.turnstile.reset(turnstileWidgetId.current);
+          setTurnstileToken("");
+        }
+        throw new Error(`Lead submission failed: ${response.status}`);
+      }
+
+      trackFormSubmit("contact");
+      setSubmitted(true);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setAudienceType("");
+      setProgramInterest("");
+      setMessage("");
+      setWebsite("");
+      if (turnstileWidgetId.current && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId.current);
+      }
+      setTurnstileToken("");
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch {
+      toast({
+        title: "Could not send message",
+        description: "Please try again in a minute or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -109,22 +231,41 @@ const Contact = () => {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-foreground mb-2">Name</label>
-                    <Input placeholder="Your name" required className="rounded-xl" />
+                    <Input
+                      placeholder="Your name"
+                      required
+                      className="rounded-xl"
+                      value={name}
+                      onChange={(event) => setName(event.target.value)}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-foreground mb-2">Email</label>
-                    <Input type="email" placeholder="your@email.com" required className="rounded-xl" />
+                    <Input
+                      type="email"
+                      placeholder="your@email.com"
+                      required
+                      className="rounded-xl"
+                      value={email}
+                      onChange={(event) => setEmail(event.target.value)}
+                    />
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-bold text-foreground mb-2">Phone</label>
-                    <Input type="tel" placeholder="(555) 123-4567" className="rounded-xl" />
+                    <Input
+                      type="tel"
+                      placeholder="(555) 123-4567"
+                      className="rounded-xl"
+                      value={phone}
+                      onChange={(event) => setPhone(event.target.value)}
+                    />
                   </div>
                   <div>
                     <label className="block text-sm font-bold text-foreground mb-2">I Am A...</label>
-                    <Select>
+                    <Select value={audienceType} onValueChange={setAudienceType}>
                       <SelectTrigger className="rounded-xl">
                         <SelectValue placeholder="Select one" />
                       </SelectTrigger>
@@ -140,7 +281,7 @@ const Contact = () => {
 
                 <div>
                   <label className="block text-sm font-bold text-foreground mb-2">Program Interest</label>
-                  <Select>
+                  <Select value={programInterest} onValueChange={setProgramInterest}>
                     <SelectTrigger className="rounded-xl">
                       <SelectValue placeholder="Select a program" />
                     </SelectTrigger>
@@ -160,10 +301,32 @@ const Contact = () => {
                     placeholder="Tell us about what you're looking for..."
                     rows={4}
                     className="rounded-xl resize-none"
+                    value={message}
+                    onChange={(event) => setMessage(event.target.value)}
                   />
                 </div>
 
-                <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
+                <input
+                  type="text"
+                  value={website}
+                  onChange={(event) => setWebsite(event.target.value)}
+                  autoComplete="off"
+                  tabIndex={-1}
+                  className="hidden"
+                />
+
+                {TURNSTILE_SITE_KEY ? (
+                  <div className="pt-1">
+                    <div ref={turnstileRef} />
+                  </div>
+                ) : null}
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full"
+                  disabled={isSubmitting || (!!TURNSTILE_SITE_KEY && !turnstileToken)}
+                >
                   {isSubmitting ? "Sending..." : (
                     <>
                       <Send className="w-4 h-4 mr-2" />
