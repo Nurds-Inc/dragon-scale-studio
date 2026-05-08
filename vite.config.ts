@@ -16,6 +16,8 @@ export default defineConfig(({ mode }) => {
       strictPort: true,
       allowedHosts: true,
       watch: {
+        usePolling: true,
+        interval: 300,
         ignored: ["**/.git/**", "**/.worktrees/**", "/repo/.worktrees/**"],
       },
       hmr: isClusterDev
