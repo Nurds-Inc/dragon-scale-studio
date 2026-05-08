@@ -49,6 +49,7 @@ spec:
           - --repo=https://github.com/Nurds-Inc/dragon-scale-studio.git
           - --branch=main
           - --root=/repo
+          - --link=dragon-scale-studio
           - --one-time
         volumeMounts:
         - name: repo
@@ -77,6 +78,7 @@ spec:
           - --repo=https://github.com/Nurds-Inc/dragon-scale-studio.git
           - --branch=main
           - --root=/repo
+          - --link=dragon-scale-studio
           - --period=10s
           - --max-failures=3
         volumeMounts:
@@ -101,16 +103,36 @@ spec:
       # Dev server container
       - name: app
         image: oven/bun:1.1-alpine
-        workingDir: /repo/dragon-scale-studio.git
+        workingDir: /repo/dragon-scale-studio
         command:
           - /bin/sh
           - -c
           - |
             set -e
-            echo "Installing dependencies..."
-            bun install
-            echo "Starting dev server..."
-            exec bun run dev --host :: --port 8080
+            LAST_REV=""
+            while true; do
+              REV="$(readlink /repo/dragon-scale-studio || true)"
+              if [ -n "$REV" ] && [ "$REV" != "$LAST_REV" ]; then
+                LAST_REV="$REV"
+                cd /repo/dragon-scale-studio
+                echo "Detected repo update: $LAST_REV"
+                echo "Installing dependencies..."
+                bun install --frozen-lockfile || bun install
+                echo "Starting dev server..."
+                bun run dev --host :: --port 8080 &
+                VITE_PID=$!
+                while [ "$(readlink /repo/dragon-scale-studio || true)" = "$LAST_REV" ]; do
+                  sleep 2
+                  if ! kill -0 "$VITE_PID" 2>/dev/null; then
+                    break
+                  fi
+                done
+                echo "Stopping dev server for next revision..."
+                kill "$VITE_PID" 2>/dev/null || true
+                wait "$VITE_PID" 2>/dev/null || true
+              fi
+              sleep 2
+            done
         ports:
         - name: http
           containerPort: 8080
@@ -119,6 +141,10 @@ spec:
         env:
         - name: NODE_ENV
           value: development
+        - name: CHOKIDAR_USEPOLLING
+          value: "true"
+        - name: CHOKIDAR_INTERVAL
+          value: "300"
         
         resources:
           requests:
