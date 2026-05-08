@@ -136,10 +136,8 @@ spec:
             - ALL
         
         readinessProbe:
-          httpGet:
-            path: /
+          tcpSocket:
             port: http
-            scheme: HTTP
           initialDelaySeconds: 30
           periodSeconds: 10
           timeoutSeconds: 5
@@ -147,10 +145,8 @@ spec:
           failureThreshold: 6
         
         livenessProbe:
-          httpGet:
-            path: /
+          tcpSocket:
             port: http
-            scheme: HTTP
           initialDelaySeconds: 60
           periodSeconds: 30
           timeoutSeconds: 5
