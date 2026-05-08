@@ -15,6 +15,9 @@ export default defineConfig(({ mode }) => {
       port: 8080,
       strictPort: true,
       allowedHosts: true,
+      watch: {
+        ignored: ["**/.git/**", "**/.worktrees/**", "/repo/.worktrees/**"],
+      },
       hmr: isClusterDev
         ? {
             host: hmrHost,
