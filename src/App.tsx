@@ -11,6 +11,7 @@ import Homeschool from "./pages/Homeschool";
 import About from "./pages/About";
 import Schools from "./pages/Schools";
 import Contact from "./pages/Contact";
+import Testimonials from "./pages/Testimonials";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
@@ -34,6 +35,7 @@ const AppRoutes = () => {
       <Route path="/about" element={<About />} />
       <Route path="/schools" element={<Schools />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/testimonials" element={<Testimonials />} />
       <Route path="/privacy" element={<Privacy />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="*" element={<NotFound />} />

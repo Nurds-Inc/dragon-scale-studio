@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -215,6 +216,13 @@ const Contact = () => {
                 <div className="bg-primary rounded-3xl p-8 text-primary-foreground">
                   <h3 className="font-display text-xl font-bold mb-2">🏫 For Schools</h3>
                   <p className="text-primary-foreground/80 text-sm">Interested in bringing music enrichment to your campus? Let us know and we'll send you program details and pricing.</p>
+                </div>
+                <div className="bg-card rounded-3xl p-8 border border-border">
+                  <h3 className="font-display text-xl font-bold mb-2 text-foreground">💬 Already a Studio Family?</h3>
+                  <p className="text-muted-foreground text-sm mb-4">Share your child&apos;s music story to help new families feel confident getting started.</p>
+                  <Link to="/testimonials">
+                    <Button variant="accent" size="lg">Share a Testimonial</Button>
+                  </Link>
                 </div>
               </div>
 

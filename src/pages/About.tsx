@@ -82,8 +82,8 @@ const About = () => {
         description="Whether you're a family or a school, we'd love to share our passion for music education with you."
         primaryLabel="Contact Us"
         primaryLink="/contact"
-        secondaryLabel="View Programs"
-        secondaryLink="/piano-lessons"
+        secondaryLabel="Share a Testimonial"
+        secondaryLink="/testimonials"
       />
     </PageLayout>
   );
