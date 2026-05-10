@@ -110,7 +110,7 @@ const Contact = () => {
             audienceType: audienceType || "",
             programInterest: programInterest || "",
           },
-          createCrmLead: true,
+          createCrmLead: false,
         }),
       });
 
