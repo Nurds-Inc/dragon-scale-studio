@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState, useEffect, useRef } from "react";
 import { MessageSquareHeart, CheckCircle2 } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,11 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "@/hooks/use-toast";
 import dragonScales from "@/assets/dragon-scales-pattern.png";
 import flyerDragon from "@/assets/flyer-dragon.png";
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.sandbox.nurds.com";
+const FORM_KEY = "testimonial";
+const FORM_SUBMISSION_ENDPOINT = `${API_BASE_URL}/api/v1/public/workspaces/dragon-scale/forms/${FORM_KEY}/submissions`;
+const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "0x4AAAAAADK-pq5fJkCLoMDR";
 
 const prompts = [
   "What changed for your child after starting lessons?",
@@ -26,6 +31,43 @@ const Testimonials = () => {
   const [email, setEmail] = useState("");
   const [approvedForPublicUse, setApprovedForPublicUse] = useState(false);
   const [photoPermission, setPhotoPermission] = useState(false);
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | undefined>();
+
+  useEffect(() => {
+    if (!TURNSTILE_SITE_KEY || !turnstileRef.current) return;
+    const scriptId = "cf-turnstile-script";
+    const renderWidget = () => {
+      if (!window.turnstile || !turnstileRef.current) return;
+      if (turnstileWidgetId.current) {
+        window.turnstile.remove(turnstileWidgetId.current);
+      }
+      turnstileWidgetId.current = window.turnstile.render(turnstileRef.current, {
+        sitekey: TURNSTILE_SITE_KEY,
+        callback: (token: string) => setTurnstileToken(token),
+        "expired-callback": () => setTurnstileToken(""),
+        "error-callback": () => setTurnstileToken(""),
+      });
+    };
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+      script.async = true;
+      script.defer = true;
+      script.onload = renderWidget;
+      document.head.appendChild(script);
+    } else {
+      renderWidget();
+    }
+    return () => {
+      if (turnstileWidgetId.current && window.turnstile) {
+        window.turnstile.remove(turnstileWidgetId.current);
+      }
+    };
+  }, []);
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -39,20 +81,60 @@ const Testimonials = () => {
     }
 
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 650));
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setParentName("");
-    setStudentName("");
-    setProgram("");
-    setTestimonial("");
-    setEmail("");
-    setApprovedForPublicUse(false);
-    setPhotoPermission(false);
-    toast({
-      title: "Thank you for sharing",
-      description: "Your testimonial has been saved for review.",
-    });
+    try {
+      const response = await fetch(FORM_SUBMISSION_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          firstName: parentName,
+          lastName: "",
+          email: email || undefined,
+          message: testimonial,
+          sourceUrl: window.location.href,
+          turnstileToken: turnstileToken || undefined,
+          metadata: {
+            studentName: studentName || "",
+            program: program || "",
+            approvedForPublicUse: String(approvedForPublicUse),
+            photoPermission: String(photoPermission),
+          },
+          createCrmLead: false,
+        }),
+      });
+
+      if (!response.ok) {
+        if (turnstileWidgetId.current && window.turnstile) {
+          window.turnstile.reset(turnstileWidgetId.current);
+          setTurnstileToken("");
+        }
+        throw new Error(`Testimonial submission failed: ${response.status}`);
+      }
+
+      setSubmitted(true);
+      setParentName("");
+      setStudentName("");
+      setProgram("");
+      setTestimonial("");
+      setEmail("");
+      setApprovedForPublicUse(false);
+      setPhotoPermission(false);
+      if (turnstileWidgetId.current && window.turnstile) {
+        window.turnstile.reset(turnstileWidgetId.current);
+      }
+      setTurnstileToken("");
+      toast({
+        title: "Thank you for sharing",
+        description: "Your testimonial has been saved for review.",
+      });
+    } catch {
+      toast({
+        title: "Could not save testimonial",
+        description: "Please try again in a minute or email us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -198,6 +280,10 @@ const Testimonials = () => {
                     <span>I also give permission to use my child&apos;s class photo if one is provided separately.</span>
                   </label>
                 </div>
+
+                {TURNSTILE_SITE_KEY && (
+                  <div ref={turnstileRef} className="flex justify-center" />
+                )}
 
                 <Button type="submit" size="lg" className="w-full" disabled={isSubmitting}>
                   {isSubmitting ? "Saving..." : "Submit Testimonial"}
