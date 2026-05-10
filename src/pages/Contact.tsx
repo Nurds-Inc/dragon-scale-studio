@@ -12,7 +12,8 @@ import flyerDragon from "@/assets/flyer-dragon.png";
 import { trackFormSubmit } from "@/lib/analytics";
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://api.sandbox.nurds.com";
-const LEAD_ENDPOINT = `${API_BASE_URL}/api/v1/public/workspaces/dragon-scale/leads`;
+const FORM_KEY = "contact";
+const FORM_SUBMISSION_ENDPOINT = `${API_BASE_URL}/api/v1/public/workspaces/dragon-scale/forms/${FORM_KEY}/submissions`;
 const TURNSTILE_SITE_KEY = import.meta.env.VITE_TURNSTILE_SITE_KEY || "0x4AAAAAADK-pq5fJkCLoMDR";
 
 declare global {
@@ -90,7 +91,7 @@ const Contact = () => {
       const parts = name.trim().split(/\s+/).filter(Boolean);
       const firstName = parts[0] || name.trim();
       const lastName = parts.slice(1).join(" ");
-      const response = await fetch(LEAD_ENDPOINT, {
+      const response = await fetch(FORM_SUBMISSION_ENDPOINT, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -109,6 +110,7 @@ const Contact = () => {
             audienceType: audienceType || "",
             programInterest: programInterest || "",
           },
+          createCrmLead: true,
         }),
       });
 
