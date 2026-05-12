@@ -33,8 +33,8 @@ spec:
       
       containers:
       - name: app
-        image: ghcr.io/nurds-inc/dragon-scale-studio:latest
-        imagePullPolicy: Always
+        image: ghcr.io/nurds-inc/dragon-scale-studio@sha256:282b9b2664652232184354e7e8fdf284b563a7e7d878242e2a159aad39652b5c
+        imagePullPolicy: IfNotPresent
         
         ports:
         - name: http
